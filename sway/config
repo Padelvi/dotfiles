@@ -9,6 +9,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     bindsym $mod+Shift+q kill
     bindsym $mod+a exec $menu
     bindsym $mod+Shift+r reload
+    bindsym $mod+l exec swaylock
     floating_modifier $mod normal
 #
 # Ulauncher with no window borders
