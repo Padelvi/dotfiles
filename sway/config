@@ -1,11 +1,15 @@
-set $mod Mod4
-set $term foot
-set $menu ulauncher
+# Basic variables
+    set $mod Mod4
+    set $postman flatpak run com.getpostman.Postman
+    set $spotify flatpak run com.spotify.Client
+    set $obsidian flatpak run md.obsidian.Obsidian
+    set $firefox flatpak run org.mozilla.firefox
+    set $menu ulauncher
 #
 output * bg /home/padelvi/.local/share/wallpapers/night.png fill
 #
 # Basic key bindings
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec foot
     bindsym $mod+Shift+q kill
     bindsym $mod+a exec $menu
     bindsym $mod+Shift+r reload
@@ -59,10 +63,16 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     bindsym $mod+Shift+0 move container to workspace $w10
 
     assign [app_id="foot"] $w1
-    assign [app_id="firefox"] $w2
+    assign [class="firefox"] $w2
     assign [class="Postman"] $w8
     assign [class="obsidian"] $w9
     assign [class="Spotify"] $w10
+
+    bindsym $mod+Control+1 exec swaymsg "workspace $w1; exec foot"
+    bindsym $mod+Control+2 exec swaymsg "workspace $w2; exec $firefox"
+    bindsym $mod+Control+8 exec swaymsg "workspace $w8; exec $postman"
+    bindsym $mod+Control+9 exec swaymsg "workspace $w9; exec $obsidian"
+    bindsym $mod+Control+0 exec swaymsg "workspace $w10; exec $spotify"
 #
 # Layout
     bindsym $mod+s layout stacking
@@ -98,4 +108,4 @@ bindsym $mod+r mode "resize"
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 exec foot
-exec firefox
+exec flatpak run org.mozilla.firefox
