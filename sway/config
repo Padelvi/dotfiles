@@ -4,6 +4,7 @@
     set $spotify flatpak run com.spotify.Client
     set $obsidian flatpak run md.obsidian.Obsidian
     set $firefox flatpak run org.mozilla.firefox
+    set $citra flatpak run org.citra_emu.citra
     set $menu ulauncher
 #
 output * bg /home/padelvi/.local/share/wallpapers/night.png fill
@@ -36,7 +37,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     set $w4 4
     set $w5 5
     set $w6 6
-    set $w7 7
+    set $w7 "7: Citra"
     set $w8 "8: Postman"
     set $w9 "9: Obsidian"
     set $w10 "10: Spotify"
@@ -47,7 +48,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     bindsym $mod+4 workspace number $w4
     bindsym $mod+5 workspace number $w5
     bindsym $mod+6 workspace number $w6
-    bindsym $mod+7 workspace number $w7
+    bindsym $mod+7 workspace $w7
     bindsym $mod+8 workspace $w8
     bindsym $mod+9 workspace $w9
     bindsym $mod+0 workspace $w10
@@ -57,22 +58,23 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     bindsym $mod+Shift+4 move container to workspace number $w4
     bindsym $mod+Shift+5 move container to workspace number $w5
     bindsym $mod+Shift+6 move container to workspace number $w6
-    bindsym $mod+Shift+7 move container to workspace number $w7
+    bindsym $mod+Shift+7 move container to workspace $w7
     bindsym $mod+Shift+8 move container to workspace $w8
     bindsym $mod+Shift+9 move container to workspace $w9
     bindsym $mod+Shift+0 move container to workspace $w10
 
     assign [app_id="foot"] $w1
     assign [class="firefox"] $w2
+    assign [app_id="citra-qt"] $w7
     assign [class="Postman"] $w8
     assign [class="obsidian"] $w9
     assign [class="Spotify"] $w10
 
-    bindsym $mod+Control+1 exec swaymsg "workspace $w1; exec foot"
-    bindsym $mod+Control+2 exec swaymsg "workspace $w2; exec $firefox"
-    bindsym $mod+Control+8 exec swaymsg "workspace $w8; exec $postman"
-    bindsym $mod+Control+9 exec swaymsg "workspace $w9; exec $obsidian"
-    bindsym $mod+Control+0 exec swaymsg "workspace $w10; exec $spotify"
+    bindsym $mod+Control+2 exec swaymsg "exec $firefox; workspace $w2"
+    bindsym $mod+Control+7 exec swaymsg "exec $citra; workspace $w7"
+    bindsym $mod+Control+8 exec swaymsg "exec $postman; workspace $w8"
+    bindsym $mod+Control+9 exec swaymsg "exec $obsidian; workspace $w9"
+    bindsym $mod+Control+0 exec swaymsg "exec $spotify; workspace $w10"
 #
 # Layout
     bindsym $mod+s layout stacking
