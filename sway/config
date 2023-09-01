@@ -4,15 +4,16 @@
     set $spotify flatpak run com.spotify.Client
     set $obsidian flatpak run md.obsidian.Obsidian
     set $firefox flatpak run org.mozilla.firefox
-    set $citra flatpak run org.citra_emu.citra
-    set $menu ulauncher
+    set $whatsapp flatpak run io.github.mimbrero.WhatsAppDesktop
+    set $flameshot flatpak run org.flameshot.Flameshot
+    set $wildcard flatpak run com.felipekinoshita.Wildcard
 #
 output * bg /home/padelvi/.local/share/wallpapers/night.png fill
 #
 # Basic key bindings
     bindsym $mod+Return exec foot
     bindsym $mod+Shift+q kill
-    bindsym $mod+a exec $menu
+    bindsym $mod+a exec swaymsg "workspace Ulauncher; exec ulauncher"
     bindsym $mod+Shift+r reload
     bindsym $mod+l exec swaylock
     floating_modifier $mod normal
@@ -33,81 +34,97 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
 # Workspaces
     set $w1 "1: Term"
     set $w2 "2: Browser"
-    set $w3 3
-    set $w4 4
-    set $w5 5
-    set $w6 6
-    set $w7 "7: Citra"
-    set $w8 "8: Postman"
-    set $w9 "9: Obsidian"
-    set $w10 "10: Spotify"
+    set $w3 "3: Spotify"
+    set $w4 "4: Obsidian"
+    set $w5 "5: Whatsapp"
+    set $w6 "6: Postman"
+    set $w7 "7: Corechess"
+    set $w8 "8: Klavaro"
+    set $wothers "Others"
 
     bindsym $mod+1 workspace $w1
     bindsym $mod+2 workspace $w2
-    bindsym $mod+3 workspace number $w3
-    bindsym $mod+4 workspace number $w4
-    bindsym $mod+5 workspace number $w5
-    bindsym $mod+6 workspace number $w6
+    bindsym $mod+3 workspace $w3
+    bindsym $mod+4 workspace $w4
+    bindsym $mod+5 workspace $w5
+    bindsym $mod+6 workspace $w6
     bindsym $mod+7 workspace $w7
     bindsym $mod+8 workspace $w8
-    bindsym $mod+9 workspace $w9
-    bindsym $mod+0 workspace $w10
+    bindsym $mod+0 workspace $wothers
     bindsym $mod+Shift+1 move container to workspace $w1
     bindsym $mod+Shift+2 move container to workspace $w2
-    bindsym $mod+Shift+3 move container to workspace number $w3
-    bindsym $mod+Shift+4 move container to workspace number $w4
-    bindsym $mod+Shift+5 move container to workspace number $w5
-    bindsym $mod+Shift+6 move container to workspace number $w6
+    bindsym $mod+Shift+3 move container to workspace $w3
+    bindsym $mod+Shift+4 move container to workspace $w4
+    bindsym $mod+Shift+5 move container to workspace $w5
+    bindsym $mod+Shift+6 move container to workspace $w6
     bindsym $mod+Shift+7 move container to workspace $w7
     bindsym $mod+Shift+8 move container to workspace $w8
-    bindsym $mod+Shift+9 move container to workspace $w9
-    bindsym $mod+Shift+0 move container to workspace $w10
+    bindsym $mod+Shift+0 move container to workspace $wothers
 
     assign [app_id="foot"] $w1
     assign [class="firefox"] $w2
-    assign [app_id="citra-qt"] $w7
-    assign [class="Postman"] $w8
-    assign [class="obsidian"] $w9
-    assign [class="Spotify"] $w10
+    assign [class="Spotify"] $w3
+    assign [class="obsidian"] $w4
+    assign [class="whatsapp-desktop-linux"] $w5
+    assign [class="Postman"] $w6
+    assign [class="CoreChess"] $w7
+    assign [app_id="klavaro"] $w8
+    assign [app_id="thunar"] $wothers
+    assign [app_id="com.felipekinoshita.Wildcard"] $wothers
+    assign [app_id="blueman-manager"] $wothers
+    assign [class="GParted"] $wothers
+    assign [class="balena-etcher"] $wothers
+    assign [class="Matplotlib"] $wothers
+    assign [app_id="org.kde.ark"] $wothers
+    assign [app_id="ulauncher"] "Ulauncher"
 
-    bindsym $mod+Control+2 exec swaymsg "exec $firefox; workspace $w2"
-    bindsym $mod+Control+7 exec swaymsg "exec $citra; workspace $w7"
-    bindsym $mod+Control+8 exec swaymsg "exec $postman; workspace $w8"
-    bindsym $mod+Control+9 exec swaymsg "exec $obsidian; workspace $w9"
-    bindsym $mod+Control+0 exec swaymsg "exec $spotify; workspace $w10"
+    workspace $w1 output HDMI-A-1
+    workspace $w2 output HDMI-A-1
+    workspace $w3 output HDMI-A-1
+    workspace $w4 output HDMI-A-1
+    workspace $w5 output HDMI-A-1
+    workspace $w6 output HDMI-A-1
+    workspace $w7 output HDMI-A-1
+    workspace $w8 output HDMI-A-1
+    workspace $wothers output eDP-1
+    workspace "Ulauncher" output eDP-1
 #
 # Layout
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
     bindsym $mod+f fullscreen
-
     bindsym $mod+d focus child
     bindsym $mod+Shift+d focus parent
-
-    bindsym $mod+space focus mode_toggle
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space floating toggle
 #
-# Playerctl and pactl
+# Playerctl
     bindsym $mod+backslash exec playerctl --player=spotify play-pause
     bindsym $mod+apostrophe exec playerctl --player=spotify previous
     bindsym $mod+quotedbl exec playerctl --player=spotify next
     bindsym $mod+Control+Left exec playerctl --player=spotify position 5-
     bindsym $mod+Control+Right exec playerctl --player=spotify position 5+
-    bindsym $mod+Control+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym $mod+Control+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym $mod+Control+Up exec playerctl --player=spotify volume .1+
+    bindsym $mod+Control+Down exec playerctl --player=spotify volume .1-
     bindsym $mod+Shift+backslash exec playerctl -a stop
 #
-mode "resize" {
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
+# Flameshot
+    bindsym $mod+slash exec $flameshot gui
+    bindsym $mod+Shift+slash exec $flameshot screen -p ~/Templates/screenshots
+#
+# Resize mode
+    mode "resize" {
+        bindsym Left resize shrink width 10px
+        bindsym Down resize grow height 10px
+        bindsym Up resize shrink height 10px
+        bindsym Right resize grow width 10px
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+r mode "resize"
+#
 
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 exec foot
-exec flatpak run org.mozilla.firefox
+exec $firefox
+exec $flameshot

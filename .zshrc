@@ -19,7 +19,7 @@ export GIT_EDITOR=nvim
 export SUDO_EDITOR=vi
 
 # Plugins
-plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting)
+plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use)
 
 source /home/padelvi/.oh-my-zsh/oh-my-zsh.sh
 
