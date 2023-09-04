@@ -76,6 +76,10 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     assign [class="balena-etcher"] $wothers
     assign [class="Matplotlib"] $wothers
     assign [app_id="org.kde.ark"] $wothers
+    assign [app_id="transmission-gtk"] $wothers
+    assign [app_id="sway-input-config"] $wothers
+    assign [app_id="mpv"] $wothers
+    assign [app_id="libreoffice-math"] $wothers
     assign [app_id="ulauncher"] "Ulauncher"
 
     workspace $w1 output HDMI-A-1
