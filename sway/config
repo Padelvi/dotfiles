@@ -1,4 +1,4 @@
-# Basic variables
+# Set basic variables
     set $mod Mod4
     set $postman flatpak run com.getpostman.Postman
     set $spotify flatpak run com.spotify.Client
@@ -8,7 +8,8 @@
     set $flameshot flatpak run org.flameshot.Flameshot
     set $wildcard flatpak run com.felipekinoshita.Wildcard
 #
-output * bg /home/padelvi/.local/share/wallpapers/night.png fill
+# Background
+    output * bg /home/padelvi/.local/share/wallpapers/night.png fill
 #
 # Basic key bindings
     bindsym $mod+Return exec foot
@@ -21,7 +22,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
 # Ulauncher with no window borders
     for_window [app_id="ulauncher"] border pixel 0
 #
-# Moving
+# Moving and focusing
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
@@ -31,6 +32,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+#
 # Workspaces
     set $w1 "1: Term"
     set $w2 "2: Browser"
@@ -40,6 +42,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     set $w6 "6: Postman"
     set $w7 "7: Corechess"
     set $w8 "8: Klavaro"
+    set $w9 "9: Libreoffice"
     set $wothers "Others"
 
     bindsym $mod+1 workspace $w1
@@ -50,6 +53,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     bindsym $mod+6 workspace $w6
     bindsym $mod+7 workspace $w7
     bindsym $mod+8 workspace $w8
+    bindsym $mod+9 workspace $w9
     bindsym $mod+0 workspace $wothers
     bindsym $mod+Shift+1 move container to workspace $w1
     bindsym $mod+Shift+2 move container to workspace $w2
@@ -59,6 +63,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     bindsym $mod+Shift+6 move container to workspace $w6
     bindsym $mod+Shift+7 move container to workspace $w7
     bindsym $mod+Shift+8 move container to workspace $w8
+    bindsym $mod+Shift+9 move container to workspace $w9
     bindsym $mod+Shift+0 move container to workspace $wothers
 
     assign [app_id="foot"] $w1
@@ -69,6 +74,13 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     assign [class="Postman"] $w6
     assign [class="CoreChess"] $w7
     assign [app_id="klavaro"] $w8
+    assign [app_id="libreoffice"] $w9
+    assign [app_id="libreoffice-math"] $w9
+    assign [app_id="libreoffice-writer"] $w9
+    assign [app_id="libreoffice-impress"] $w9
+    assign [app_id="libreoffice-base"] $w9
+    assign [app_id="libreoffice-calc"] $w9
+    assign [app_id="libreoffice-draw"] $w9
     assign [app_id="thunar"] $wothers
     assign [app_id="com.felipekinoshita.Wildcard"] $wothers
     assign [app_id="blueman-manager"] $wothers
@@ -79,7 +91,6 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     assign [app_id="transmission-gtk"] $wothers
     assign [app_id="sway-input-config"] $wothers
     assign [app_id="mpv"] $wothers
-    assign [app_id="libreoffice-math"] $wothers
     assign [app_id="ulauncher"] "Ulauncher"
 
     workspace $w1 output HDMI-A-1
@@ -90,6 +101,7 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
     workspace $w6 output HDMI-A-1
     workspace $w7 output HDMI-A-1
     workspace $w8 output HDMI-A-1
+    workspace $w9 output HDMI-A-1
     workspace $wothers output eDP-1
     workspace "Ulauncher" output eDP-1
 #
@@ -122,6 +134,10 @@ output * bg /home/padelvi/.local/share/wallpapers/night.png fill
         bindsym Down resize grow height 10px
         bindsym Up resize shrink height 10px
         bindsym Right resize grow width 10px
+        bindsym $mod+Left focus left
+        bindsym $mod+Down focus down
+        bindsym $mod+Up focus up
+        bindsym $mod+Right focus right
         bindsym Escape mode "default"
     }
     bindsym $mod+r mode "resize"
