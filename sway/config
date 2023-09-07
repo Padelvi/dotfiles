@@ -1,18 +1,18 @@
 # Set basic variables
     set $mod Mod4
-    set $postman flatpak run com.getpostman.Postman
-    set $spotify flatpak run com.spotify.Client
-    set $obsidian flatpak run md.obsidian.Obsidian
-    set $firefox flatpak run org.mozilla.firefox
-    set $whatsapp flatpak run io.github.mimbrero.WhatsAppDesktop
-    set $flameshot flatpak run org.flameshot.Flameshot
-    set $wildcard flatpak run com.felipekinoshita.Wildcard
+    # set $postman flatpak run com.getpostman.Postman
+    # set $spotify flatpak run com.spotify.Client
+    # set $obsidian flatpak run md.obsidian.Obsidian
+    # set $firefox flatpak run org.mozilla.firefox
+    # set $whatsapp flatpak run io.github.mimbrero.WhatsAppDesktop
+    # set $flameshot flatpak run org.flameshot.Flameshot
+    # set $wildcard flatpak run com.felipekinoshita.Wildcard
 #
 # Background
-    output * bg /home/padelvi/.local/share/wallpapers/night.png fill
+    output * bg /home/padelvi/.local/share/wallpapers/arch.jpg fill
 #
 # Basic key bindings
-    bindsym $mod+Return exec foot
+    bindsym $mod+Return exec kitty
     bindsym $mod+Shift+q kill
     bindsym $mod+a exec swaymsg "workspace Ulauncher; exec ulauncher"
     bindsym $mod+Shift+r reload
@@ -66,7 +66,7 @@
     bindsym $mod+Shift+9 move container to workspace $w9
     bindsym $mod+Shift+0 move container to workspace $wothers
 
-    assign [app_id="foot"] $w1
+    assign [app_id="kitty"] $w1
     assign [class="firefox"] $w2
     assign [class="Spotify"] $w3
     assign [class="obsidian"] $w4
@@ -115,18 +115,18 @@
     bindsym $mod+space floating toggle
 #
 # Playerctl
-    bindsym $mod+backslash exec playerctl --player=spotify play-pause
-    bindsym $mod+apostrophe exec playerctl --player=spotify previous
-    bindsym $mod+quotedbl exec playerctl --player=spotify next
-    bindsym $mod+Control+Left exec playerctl --player=spotify position 5-
-    bindsym $mod+Control+Right exec playerctl --player=spotify position 5+
-    bindsym $mod+Control+Up exec playerctl --player=spotify volume .1+
-    bindsym $mod+Control+Down exec playerctl --player=spotify volume .1-
-    bindsym $mod+Shift+backslash exec playerctl -a stop
+    # bindsym $mod+backslash exec playerctl --player=spotify play-pause
+    # bindsym $mod+apostrophe exec playerctl --player=spotify previous
+    # bindsym $mod+quotedbl exec playerctl --player=spotify next
+    # bindsym $mod+Control+Left exec playerctl --player=spotify position 5-
+    # bindsym $mod+Control+Right exec playerctl --player=spotify position 5+
+    # bindsym $mod+Control+Up exec playerctl --player=spotify volume .1+
+    # bindsym $mod+Control+Down exec playerctl --player=spotify volume .1-
+    # bindsym $mod+Shift+backslash exec playerctl -a stop
 #
 # Flameshot
-    bindsym $mod+slash exec $flameshot gui
-    bindsym $mod+Shift+slash exec $flameshot screen -p ~/Templates/screenshots
+    # bindsym $mod+slash exec $flameshot gui
+    # bindsym $mod+Shift+slash exec $flameshot screen -p ~/Templates/screenshots
 #
 # Resize mode
     mode "resize" {
@@ -145,6 +145,6 @@
 
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
-exec foot
-exec $firefox
-exec $flameshot
+# exec kitty
+# exec $firefox
+# exec $flameshot
