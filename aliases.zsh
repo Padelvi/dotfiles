@@ -16,26 +16,20 @@ alias gl="git pull origin"
 # Python
 alias py="python3"
 alias pys="python3 -m http.server"
-alias main="python3 main.py"
-alias bpy="bpython"
-
-# Venv
 alias pyv="python3 -m venv venv"
 alias von="source ./venv/bin/activate"
 alias voff="deactivate"
 
-# Nvim
-alias nv="nvim"
-
 # Ls
-alias l="ls -lAh"
-alias ll="ls -lh"
+alias l="exa -la"
+alias ll="exa -l"
 
 # Others
+alias nv="nvim"
 alias cls="clear"
 alias t="touch"
-alias .="cd"
 alias ex="exit"
 alias exp="export"
 alias ino="arduino-cli"
 alias ghr="gh repo"
+alias cleanup="sudo pacman -Rns $(pacman -Qtdq)"
