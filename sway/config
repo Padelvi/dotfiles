@@ -1,5 +1,6 @@
 # Set basic variables
     set $mod Mod4
+    set $lock swaylock -eFi /home/padelvi/.local/share/wallpapers/lock.jpg
 #
 # Background
     output * bg /home/padelvi/.local/share/wallpapers/arch.png fill
@@ -9,8 +10,9 @@
     bindsym $mod+Shift+q kill
     bindsym $mod+a exec swaymsg "workspace Ulauncher; exec ulauncher"
     bindsym $mod+Shift+r reload
-    bindsym $mod+l exec swaylock -eFi /home/padelvi/.local/share/wallpapers/lock.jpg
+    bindsym $mod+l exec $lock
     bindsym $mod+Shift+l exec systemctl suspend
+    bindsym $mod+n exec swaync-client -t -sw
     floating_modifier $mod normal
 #
 # Ulauncher with no window borders
@@ -90,8 +92,6 @@
     bindsym $mod+Control+Right exec playerctl --player=spotify volume .1+
     bindsym $mod+Control+Left exec playerctl --player=spotify volume .1-
     bindsym $mod+Shift+backslash exec playerctl -a stop
-    bindsym $mod+Control+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym $mod+Control+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 #
 # Swayosd
     bindsym --release Caps_Lock exec swayosd-client --caps-lock
@@ -113,11 +113,13 @@
     }
     bindsym $mod+r mode "resize"
 #
-
-include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
-
-exec kitty
-exec firefox-developer-edition
-exec waybar
-exec swaync
-exec swayosd-server
+# Including other files
+    include '$("/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+#
+# Exec
+    exec kitty
+    exec firefox-developer-edition
+    exec waybar
+    exec swaync
+    exec swayosd-server
+#

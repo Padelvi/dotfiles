@@ -22,7 +22,7 @@ export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
 
 # Plugins
-plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use zoxide)
+plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use zoxide zsh-abbr)
 
 source /home/padelvi/.oh-my-zsh/oh-my-zsh.sh
 
