@@ -1,5 +1,5 @@
 # Completions for arduino-cli and eza
-fpath=($HOME/Others/completions $fpath)
+fpath=($HOME/dotfiles/completions $fpath)
 
 # Battery prompt
 RPROMPT='$(battery_pct_prompt)'
@@ -40,4 +40,4 @@ compinit
 eval "$(zoxide init zsh)"
 
 # Thefuck
-eval $(thefuck --alias)
+eval "$(thefuck --alias)"
