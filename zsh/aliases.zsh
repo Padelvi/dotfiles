@@ -12,6 +12,7 @@ alias gc="git commit"
 alias gp="git push -u origin"
 alias glo="git log"
 alias gl="git pull origin"
+alias gdf="git diff"
 
 # Python
 alias py="python3"
