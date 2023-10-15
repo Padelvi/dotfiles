@@ -1,8 +1,6 @@
-## Configs
+## My system dotfiles
 
-This is my repo for my configs. I'm in arch linux, but probably they will work on other linux systems anyways.
-
-I am going to do an install script soon probably.
+This is my repo for my dev dotfiles. I'm in arch linux, but probably they will work on other linux systems anyways.
 
 For now, I have added my configs for:
 
@@ -11,6 +9,11 @@ For now, I have added my configs for:
 - Waybar
 - SwayNC
 - Kitty
-- Zsh (I use oh-my-zsh): .zshrc and my aliases file
+- Wlogout
+- Zsh (I use oh-my-zsh)
 
 For my nvim config (managed with [AstroNvim](https://github.com/AstroNvim/AstroNvim)), see my other [repo](https://github.com/Padelvi/astro-config).
+
+### Installation
+
+No install.sh script yet. I am planning to make one soon.
