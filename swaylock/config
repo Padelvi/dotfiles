@@ -1,0 +1,8 @@
+# Background image
+image=/home/padelvi/.local/share/wallpapers/lock.jpg
+
+# Ignore empty password
+ignore-empty-password
+
+# Show number of failed attempts
+show-failed-attempts
