@@ -33,28 +33,20 @@
     set $w1 "1: Term"
     set $w2 "2: Browser"
     set $w3 "3: Spotify"
-    set $w4 "4: Obsidian"
-    set $w5 "5: Postman"
     set $wothers "Others"
 
     bindsym $mod+1 workspace $w1
     bindsym $mod+2 workspace $w2
     bindsym $mod+3 workspace $w3
-    bindsym $mod+4 workspace $w4
-    bindsym $mod+5 workspace $w5
     bindsym $mod+0 workspace $wothers
     bindsym $mod+Shift+1 move container to workspace $w1
     bindsym $mod+Shift+2 move container to workspace $w2
     bindsym $mod+Shift+3 move container to workspace $w3
-    bindsym $mod+Shift+4 move container to workspace $w4
-    bindsym $mod+Shift+5 move container to workspace $w5
     bindsym $mod+Shift+0 move container to workspace $wothers
 
     assign [app_id="kitty"] $w1
     assign [class="firefox"] $w2
     assign [class="Spotify"] $w3
-    assign [class="obsidian"] $w4
-    assign [class="Postman"] $w5
     assign [class="GParted"] $wothers
     assign [class="Matplotlib"] $wothers
     assign [app_id="mpv"] $wothers
@@ -105,6 +97,12 @@
     }
     bindsym $mod+r mode "Resize"
 #
+# Shotman
+    bindsym $mod+o exec shotman --capture window
+    bindsym $mod+Shift+o exec shotman --capture window -C
+    bindsym $mod+p exec shotman --capture region
+    bindsym $mod+Shift+p exec shotman --capture region -C
+#
 # Special keys, char mode
     mode "Keys" {
         bindsym $alt+n exec wtype ñ
@@ -133,8 +131,9 @@
 # Exec
     # This is for waybar
     exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-    exec waybar
     exec kitty
     exec firefox-developer-edition
-    exec swaync
+    exec waydroid session start
+    exec systemctl --user start swaync.service
+    exec systemctl --user start waybar.service
 #

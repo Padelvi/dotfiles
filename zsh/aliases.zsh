@@ -13,6 +13,7 @@ alias gp="git push -u origin"
 alias glo="git log"
 alias gl="git pull origin"
 alias gdf="git diff"
+alias lg="lazygit"
 
 # Python
 alias py="python3"

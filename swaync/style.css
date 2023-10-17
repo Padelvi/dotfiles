@@ -2,20 +2,35 @@
  * vim: ft=less
  */
 
-@define-color cc-bg rgba(0, 0, 0, 0.7);
-
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgb(48, 48, 48);
-@define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(56, 56, 56);
-@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-
-@define-color text-color rgb(255, 255, 255);
-@define-color text-color-disabled rgb(150, 150, 150);
-
-@define-color bg-selected rgb(0, 128, 255);
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+  --cc-bg: rgba(0, 0, 0, 0.7);
+  --noti-border-color: rgba(255, 255, 255, 0.15);
+  --noti-bg: rgb(48, 48, 48);
+  --noti-bg-darker: rgb(38, 38, 38);
+  --noti-bg-hover: rgb(56, 56, 56);
+  --noti-bg-focus: rgba(68, 68, 68, 0.6);
+  --noti-close-bg: rgba(255, 255, 255, 0.1);
+  --noti-close-bg-hover: rgba(255, 255, 255, 0.15);
+  --text-color: rgb(255, 255, 255);
+  --text-color-disabled: rgb(150, 150, 150);
+  --bg-selected: rgb(0, 128, 255);
+}
 
 .notification-row {
   outline: none;
@@ -23,18 +38,19 @@
 
 .notification-row:focus,
 .notification-row:hover {
-  background: @noti-bg-focus;
+  background: var(--noti-bg-focus);
 }
 
 .notification {
   border-radius: 12px;
   margin: 6px 12px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 1px 3px 1px rgba(0, 0, 0, 0.7),
     0 2px 6px 2px rgba(0, 0, 0, 0.3);
   padding: 0;
 }
 
-/* Uncomment to enable specific urgency colors
 .low {
   background: yellow;
   padding: 6px;
@@ -52,7 +68,6 @@
   padding: 6px;
   border-radius: 12px;
 }
-*/
 
 .notification-content {
   background: transparent;
@@ -61,8 +76,8 @@
 }
 
 .close-button {
-  background: @noti-close-bg;
-  color: @text-color;
+  background: var(--noti-close-bg);
+  color: var(--text-color);
   text-shadow: none;
   padding: 0;
   border-radius: 100%;
@@ -76,7 +91,7 @@
 
 .close-button:hover {
   box-shadow: none;
-  background: @noti-close-bg-hover;
+  background: var(--noti-close-bg-hover);
   transition: all 0.15s ease-in-out;
   border: none;
 }
@@ -86,16 +101,16 @@
   padding: 4px;
   margin: 0;
   box-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
-  color: @text-color;
+  background: var(--noti-bg);
+  border: 1px solid var(--noti-border-color);
+  color: var(--text--color);
   transition: all 0.15s ease-in-out;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
   -gtk-icon-effect: none;
-  background: @noti-bg-hover;
+  background: var(--noti-bg)-hover;
 }
 
 .notification-default-action {
@@ -121,33 +136,33 @@
 
 .notification-action:last-child {
   border-bottom-right-radius: 10px;
-  border-right: 1px solid @noti-border-color;
+  border-right: 1px solid var(--noti-border-color);
 }
 
 .inline-reply {
   margin-top: 8px;
 }
 .inline-reply-entry {
-  background: @noti-bg-darker;
-  color: @text-color;
-  caret-color: @text-color;
-  border: 1px solid @noti-border-color;
+  background: var(--noti-bg)-darker;
+  color: var(--text--color);
+  caret-color: var(--text--color);
+  border: 1px solid var(--noti-border-color);
   border-radius: 12px;
 }
 .inline-reply-button {
   margin-left: 4px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: var(--noti-bg);
+  border: 1px solid var(--noti-border-color);
   border-radius: 12px;
-  color: @text-color;
+  color: var(--text--color);
 }
 .inline-reply-button:disabled {
   background: initial;
-  color: @text-color-disabled;
+  color: var(--text--color)-disabled;
   border: 1px solid transparent;
 }
 .inline-reply-button:hover {
-  background: @noti-bg-hover;
+  background: var(--noti-bg)-hover;
 }
 
 .image {
@@ -163,7 +178,7 @@
   font-size: 16px;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: var(--text--color);
   text-shadow: none;
 }
 
@@ -171,7 +186,7 @@
   font-size: 16px;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: var(--text--color);
   text-shadow: none;
   margin-right: 18px;
 }
@@ -180,12 +195,12 @@
   font-size: 15px;
   font-weight: normal;
   background: transparent;
-  color: @text-color;
+  color: var(--text--color);
   text-shadow: none;
 }
 
 .control-center {
-  background: @cc-bg;
+  background: var(--cc-bg);
 }
 
 .control-center-list {
@@ -214,15 +229,15 @@
 }
 .widget-title > button {
   font-size: initial;
-  color: @text-color;
+  color: var(--text--color);
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: var(--noti-bg);
+  border: 1px solid var(--noti-border-color);
   box-shadow: none;
   border-radius: 12px;
 }
 .widget-title > button:hover {
-  background: @noti-bg-hover;
+  background: var(--noti-bg)-hover;
 }
 
 /* DND widget */
@@ -233,15 +248,15 @@
 .widget-dnd > switch {
   font-size: initial;
   border-radius: 12px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: var(--noti-bg);
+  border: 1px solid var(--noti-border-color);
   box-shadow: none;
 }
 .widget-dnd > switch:checked {
-  background: @bg-selected;
+  background: var(--bg-selected);
 }
 .widget-dnd > switch slider {
-  background: @noti-bg-hover;
+  background: var(--noti-bg)-hover;
   border-radius: 12px;
 }
 
@@ -274,26 +289,26 @@
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
-  background-color: @noti-bg;
+  background-color: var(--noti-bg);
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button{
-  background: @noti-bg;
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: var(--noti-bg);
   border-radius: 12px;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @noti-bg-hover;
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: var(--noti-bg)-hover;
 }
 
 /* Menubar widget */
-.widget-menubar>box>.menu-button-bar>button {
+.widget-menubar > box > .menu-button-bar > button {
   border: none;
   background: transparent;
 }
 
 /* .AnyName { Name defined in config after #
-  background-color: @noti-bg;
+  background-color: var(--noti-bg);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
@@ -305,10 +320,11 @@
 }
 
 .AnyName>button:hover {
-  background-color: @noti-bg-hover;
+  background-color: var(--noti-bg)-hover;
 } */
 
-.topbar-buttons>button { /* Name defined in config after # */
+.topbar-buttons > button {
+  /* Name defined in config after # */
   border: none;
   background: transparent;
 }
@@ -316,27 +332,27 @@
 /* Volume widget */
 
 .widget-volume {
-  background-color: @noti-bg;
+  background-color: var(--noti-bg);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
 }
 
-.widget-volume>box>button {
+.widget-volume > box > button {
   background: transparent;
   border: none;
 }
 
 .per-app-volume {
-  background-color: @noti-bg-alt;
+  background-color: var(--noti-bg)-alt;
   padding: 4px 8px 8px 8px;
   margin: 0px 8px 8px 8px;
-  border-radius: 12px
+  border-radius: 12px;
 }
 
 /* Backlight widget */
 .widget-backlight {
-  background-color: @noti-bg;
+  background-color: var(--noti-bg);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
@@ -349,13 +365,13 @@
 }
 .widget-inhibitors > button {
   font-size: initial;
-  color: @text-color;
+  color: var(--text--color);
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: var(--noti-bg);
+  border: 1px solid var(--noti-border-color);
   box-shadow: none;
   border-radius: 12px;
 }
 .widget-inhibitors > button:hover {
-  background: @noti-bg-hover;
+  background: var(--noti-bg-hover);
 }

@@ -11,7 +11,7 @@ return {
     auto_quit = false,
     remotes = {},
   },
-  colorscheme = "kanagawa-dragon",
+  colorscheme = "nord",
   diagnostics = {
     virtual_text = true,
     underline = true,

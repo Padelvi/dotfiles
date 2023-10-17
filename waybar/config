@@ -1,24 +1,20 @@
 // vim: ft=json
 {
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "height": 30,
     "spacing": 4,
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
-        "sway/scratchpad",
-        "custom/media",
         "sway/window"
     ],
     "modules-center": [],
     "modules-right": [
+        "custom/media",
         "pulseaudio",
         "network",
-        "battery",
-        "battery#bat2",
-        "clock",
-        "tray"
+        "clock"
     ],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -28,9 +24,7 @@
         "format-icons": {
             "1": "",
             "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+            "3": "",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -65,29 +59,6 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-good": "",
-        "format-full": "",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",

@@ -1,7 +1,8 @@
 return {
   "AstroNvim/astrocommunity",
-  -- Colorscheme
+  -- Themes
   { import = "astrocommunity.colorscheme.kanagawa-nvim" },
+  { import = "astrocommunity.colorscheme.nord-nvim" },
   -- Indentation
   { import = "astrocommunity.indent.indent-tools-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
