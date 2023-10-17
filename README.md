@@ -13,6 +13,7 @@ For now, I have added my configs for:
 - Wlogout
 - Zsh (I use oh-my-zsh)
 - Neovim
+- Kmonad (Not using it yet)
 
 ### Installation
 
