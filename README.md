@@ -1,18 +1,18 @@
 ## My system dotfiles
 
-This is my repo for my dev dotfiles. I'm in arch linux, but probably they will work on other linux systems anyways.
+This is my repo for my dev dotfiles. I'm in arch linux (with swaywm), but they should not be limited to arch.
 
 For now, I have added my configs for:
 
 - My completion scripts
 - Sway
+- Swaylock
 - Waybar
 - SwayNC
 - Kitty
 - Wlogout
 - Zsh (I use oh-my-zsh)
-
-For my nvim config (managed with [AstroNvim](https://github.com/AstroNvim/AstroNvim)), see my other [repo](https://github.com/Padelvi/astro-config).
+- Neovim
 
 ### Installation
 
