@@ -1,36 +1,19 @@
-/*
- * vim: ft=less
- */
-
-:root {
-  --nord0: #2e3440;
-  --nord1: #3b4252;
-  --nord2: #434c5e;
-  --nord3: #4c566a;
-  --nord4: #d8dee9;
-  --nord5: #e5e9f0;
-  --nord6: #eceff4;
-  --nord7: #8fbcbb;
-  --nord8: #88c0d0;
-  --nord9: #81a1c1;
-  --nord10: #5e81ac;
-  --nord11: #bf616a;
-  --nord12: #d08770;
-  --nord13: #ebcb8b;
-  --nord14: #a3be8c;
-  --nord15: #b48ead;
-  --cc-bg: rgba(0, 0, 0, 0.7);
-  --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: rgb(48, 48, 48);
-  --noti-bg-darker: rgb(38, 38, 38);
-  --noti-bg-hover: rgb(56, 56, 56);
-  --noti-bg-focus: rgba(68, 68, 68, 0.6);
-  --noti-close-bg: rgba(255, 255, 255, 0.1);
-  --noti-close-bg-hover: rgba(255, 255, 255, 0.15);
-  --text-color: rgb(255, 255, 255);
-  --text-color-disabled: rgb(150, 150, 150);
-  --bg-selected: rgb(0, 128, 255);
-}
+$nord0: #2e3440;
+$nord1: #3b4252;
+$nord2: #434c5e;
+$nord3: #4c566a;
+$nord4: #d8dee9;
+$nord5: #e5e9f0;
+$nord6: #eceff4;
+$nord7: #8fbcbb;
+$nord8: #88c0d0;
+$nord9: #81a1c1;
+$nord10: #5e81ac;
+$nord11: #bf616a;
+$nord12: #d08770;
+$nord13: #ebcb8b;
+$nord14: #a3be8c;
+$nord15: #b48ead;
 
 .notification-row {
   outline: none;
@@ -38,35 +21,32 @@
 
 .notification-row:focus,
 .notification-row:hover {
-  background: var(--noti-bg-focus);
+  background: $nord3;
 }
 
 .notification {
   border-radius: 12px;
   margin: 6px 12px;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.3),
-    0 1px 3px 1px rgba(0, 0, 0, 0.7),
-    0 2px 6px 2px rgba(0, 0, 0, 0.3);
   padding: 0;
 }
 
-.low {
-  background: yellow;
+.low,
+.normal,
+.critical {
   padding: 6px;
   border-radius: 12px;
+}
+
+.low {
+  background: $nord13;
 }
 
 .normal {
-  background: green;
-  padding: 6px;
-  border-radius: 12px;
+  background: $nord14;
 }
 
 .critical {
-  background: red;
-  padding: 6px;
-  border-radius: 12px;
+  background: $nord11;
 }
 
 .notification-content {
@@ -76,8 +56,8 @@
 }
 
 .close-button {
-  background: var(--noti-close-bg);
-  color: var(--text-color);
+  background: $nord6;
+  color: $nord5;
   text-shadow: none;
   padding: 0;
   border-radius: 100%;
@@ -91,7 +71,7 @@
 
 .close-button:hover {
   box-shadow: none;
-  background: var(--noti-close-bg-hover);
+  background: $nord6;
   transition: all 0.15s ease-in-out;
   border: none;
 }
@@ -101,23 +81,21 @@
   padding: 4px;
   margin: 0;
   box-shadow: none;
-  background: var(--noti-bg);
-  border: 1px solid var(--noti-border-color);
-  color: var(--text--color);
+  background: $nord1;
+  border: 1px solid $nord6;
+  color: $nord5;
   transition: all 0.15s ease-in-out;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
-  -gtk-icon-effect: none;
-  background: var(--noti-bg)-hover;
+  background: $nord2;
 }
 
 .notification-default-action {
   border-radius: 12px;
 }
 
-/* When alternative actions are visible */
 .notification-default-action:not(:only-child) {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -129,43 +107,43 @@
   border-right: none;
 }
 
-/* add bottom border radius to eliminate clipping */
 .notification-action:first-child {
   border-bottom-left-radius: 10px;
 }
 
 .notification-action:last-child {
   border-bottom-right-radius: 10px;
-  border-right: 1px solid var(--noti-border-color);
+  border-right: 1px solid $nord6;
 }
 
 .inline-reply {
   margin-top: 8px;
 }
+
 .inline-reply-entry {
-  background: var(--noti-bg)-darker;
-  color: var(--text--color);
-  caret-color: var(--text--color);
-  border: 1px solid var(--noti-border-color);
+  background: $nord1;
+  color: $nord5;
+  caret-color: $nord5;
+  border: 1px solid $nord6;
   border-radius: 12px;
-}
-.inline-reply-button {
-  margin-left: 4px;
-  background: var(--noti-bg);
-  border: 1px solid var(--noti-border-color);
-  border-radius: 12px;
-  color: var(--text--color);
-}
-.inline-reply-button:disabled {
-  background: initial;
-  color: var(--text--color)-disabled;
-  border: 1px solid transparent;
-}
-.inline-reply-button:hover {
-  background: var(--noti-bg)-hover;
 }
 
-.image {
+.inline-reply-button {
+  margin-left: 4px;
+  background: $nord1;
+  border: 1px solid $nord6;
+  border-radius: 12px;
+  color: $nord5;
+}
+
+.inline-reply-button:disabled {
+  background: initial;
+  color: $nord4;
+  border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+  background: $nord2;
 }
 
 .body-image {
@@ -178,7 +156,7 @@
   font-size: 16px;
   font-weight: bold;
   background: transparent;
-  color: var(--text--color);
+  color: $nord5;
   text-shadow: none;
 }
 
@@ -186,7 +164,7 @@
   font-size: 16px;
   font-weight: bold;
   background: transparent;
-  color: var(--text--color);
+  color: $nord5;
   text-shadow: none;
   margin-right: 18px;
 }
@@ -195,12 +173,12 @@
   font-size: 15px;
   font-weight: normal;
   background: transparent;
-  color: var(--text--color);
+  color: $nord5;
   text-shadow: none;
 }
 
 .control-center {
-  background: var(--cc-bg);
+  background: $nord0;
 }
 
 .control-center-list {
@@ -215,124 +193,97 @@
   background: transparent;
 }
 
-/* Window behind control center and on all other monitors */
-.blank-window {
-  background: alpha(black, 0.25);
-}
-
-/*** Widgets ***/
-
-/* Title widget */
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
 }
+
 .widget-title > button {
   font-size: initial;
-  color: var(--text--color);
+  color: $nord5;
   text-shadow: none;
-  background: var(--noti-bg);
-  border: 1px solid var(--noti-border-color);
+  background: $nord1;
+  border: 1px solid $nord6;
   box-shadow: none;
   border-radius: 12px;
 }
+
 .widget-title > button:hover {
-  background: var(--noti-bg)-hover;
+  background: $nord2;
 }
 
-/* DND widget */
 .widget-dnd {
   margin: 8px;
   font-size: 1.1rem;
 }
+
 .widget-dnd > switch {
   font-size: initial;
   border-radius: 12px;
-  background: var(--noti-bg);
-  border: 1px solid var(--noti-border-color);
+  background: $nord1;
+  border: 1px solid $nord6;
   box-shadow: none;
 }
+
 .widget-dnd > switch:checked {
-  background: var(--bg-selected);
+  background: $nord10;
 }
+
 .widget-dnd > switch slider {
-  background: var(--noti-bg)-hover;
+  background: $nord2;
   border-radius: 12px;
 }
 
-/* Label widget */
 .widget-label {
   margin: 8px;
 }
+
 .widget-label > label {
   font-size: 1.1rem;
 }
 
-/* Mpris widget */
-.widget-mpris {
-  /* The parent to all players */
-}
 .widget-mpris-player {
   padding: 8px;
   margin: 8px;
 }
+
 .widget-mpris-title {
   font-weight: bold;
   font-size: 1.25rem;
 }
+
 .widget-mpris-subtitle {
   font-size: 1.1rem;
 }
 
-/* Buttons widget */
 .widget-buttons-grid {
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
-  background-color: var(--noti-bg);
+  background-color: $nord1;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
-  background: var(--noti-bg);
+  background: $nord1;
   border-radius: 12px;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: var(--noti-bg)-hover;
+  background: $nord2;
 }
 
-/* Menubar widget */
 .widget-menubar > box > .menu-button-bar > button {
   border: none;
   background: transparent;
 }
 
-/* .AnyName { Name defined in config after #
-  background-color: var(--noti-bg);
-  padding: 8px;
-  margin: 8px;
-  border-radius: 12px;
-}
-
-.AnyName>button {
-  background: transparent;
-  border: none;
-}
-
-.AnyName>button:hover {
-  background-color: var(--noti-bg)-hover;
-} */
-
 .topbar-buttons > button {
-  /* Name defined in config after # */
   border: none;
   background: transparent;
 }
-
-/* Volume widget */
 
 .widget-volume {
-  background-color: var(--noti-bg);
+  background-color: $nord1;
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
@@ -344,34 +295,34 @@
 }
 
 .per-app-volume {
-  background-color: var(--noti-bg)-alt;
+  background-color: $nord1;
   padding: 4px 8px 8px 8px;
   margin: 0px 8px 8px 8px;
   border-radius: 12px;
 }
 
-/* Backlight widget */
 .widget-backlight {
-  background-color: var(--noti-bg);
+  background-color: $nord1;
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
 }
 
-/* Title widget */
 .widget-inhibitors {
   margin: 8px;
   font-size: 1.5rem;
 }
+
 .widget-inhibitors > button {
   font-size: initial;
-  color: var(--text--color);
+  color: $nord5;
   text-shadow: none;
-  background: var(--noti-bg);
-  border: 1px solid var(--noti-border-color);
+  background: $nord1;
+  border: 1px solid $nord6;
   box-shadow: none;
   border-radius: 12px;
 }
+
 .widget-inhibitors > button:hover {
-  background: var(--noti-bg-hover);
+  background: $nord2;
 }
