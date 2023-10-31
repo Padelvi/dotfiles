@@ -22,18 +22,32 @@ export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
 
 # Plugins
-plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use zoxide zsh-abbr)
+plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use zoxide)
 
-source /home/padelvi/.oh-my-zsh/oh-my-zsh.sh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # Add ~/.local/bin to PATH
-if ! [[ "$PATH" =~ "/home/padelvi/.local/bin:" ]]
+if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
 then
-    PATH="/home/padelvi/.local/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 export PATH
 
-# Reload completions
+# Add ~/.cargo/bin to PATH
+if ! [[ "$PATH" =~ "$HOME/.cargo/bin:" ]]
+then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+export PATH
+
+# Bash completions
+autoload -U bashcompinit
+bashcompinit
+
+# Pipx completions
+eval "$(register-python-argcomplete pipx)"
+
+# Zsh completions
 compinit
 
 # Zoxide

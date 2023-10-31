@@ -1,30 +1,47 @@
+$nord0: #2e3440;
+$nord1: #3b4252;
+$nord2: #434c5e;
+$nord3: #4c566a;
+$nord4: #d8dee9;
+$nord5: #e5e9f0;
+$nord6: #eceff4;
+$nord7: #8fbcbb;
+$nord8: #88c0d0;
+$nord9: #81a1c1;
+$nord10: #5e81ac;
+$nord11: #bf616a;
+$nord12: #d08770;
+$nord13: #ebcb8b;
+$nord14: #a3be8c;
+$nord15: #b48ead;
+
 * {
   font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
-  color: #d8dee9;
+  color: $nord4;
 }
 
 window#waybar {
-  border-bottom: 3px solid #2e3440;
-  background-color: #2e3440;
+  border-bottom: 3px solid $nord0;
+  background-color: $nord0;
 }
 
 window#waybar.empty {
-  background-color: #2e3440;
+  background-color: $nord0;
 }
 
 #workspaces button {
   padding: 0 5px;
-  background-color: #4c566a;
+  background-color: $nord3;
 }
 
 #workspaces button:hover {
-  background-color: #2e3440;
+  background-color: $nord0;
 }
 
 #workspaces button.focused {
-  background-color: #eceff4;
-  color: #2e3440;
+  background-color: $nord6;
+  color: $nord0;
 }
 
 button {
@@ -34,15 +51,15 @@ button {
 
 button:hover {
   background: inherit;
-  box-shadow: inset 0 -3px #eceff4;
+  box-shadow: inset 0 -3px $nord6;
 }
 
 #workspaces button.urgent {
-  background-color: #bf616a;
+  background-color: $nord11;
 }
 
 #mode {
-  background-color: #8fbcbb;
+  background-color: $nord7;
 }
 
 #clock,
@@ -53,7 +70,7 @@ button:hover {
 #scratchpad {
   padding: 0 10px;
   margin: 0;
-  color: #2e3440;
+  color: $nord0;
 }
 
 #window,
@@ -70,23 +87,23 @@ button:hover {
 }
 
 #clock {
-  background-color: #81a1c1;
+  background-color: $nord9;
 }
 
 label:focus {
-  background-color: #2e3440;
+  background-color: $nord0;
 }
 
 #network {
-  background-color: #8fbcbb;
+  background-color: $nord7;
 }
 
 #network.disconnected {
-  background-color: #bf616a;
+  background-color: $nord11;
 }
 
 #pulseaudio {
-  background-color: #ebcb8b;
+  background-color: $nord13;
 }
 
 #pulseaudio.muted {
@@ -105,7 +122,5 @@ label:focus {
 }
 
 #scratchpad {
-  background-color: #3b4252;
+  background-color: $nord1;
 }
-
-/*# sourceMappingURL=style.css.map */

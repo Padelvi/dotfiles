@@ -23,8 +23,13 @@ alias von="source ./venv/bin/activate"
 alias voff="deactivate"
 
 # Ls
-alias l="exa -la"
-alias ll="exa -l"
+alias l="exa -lga"
+alias ll="exa -lg"
+
+# Keyboard, I use cliphist with fzf
+alias clp="cliphist list | fzf | cliphist decode | wl-copy"
+alias cld="cliphist list | fzf | cliphist delete"
+alias clw="cliphist wipe"
 
 # Others
 alias nv="nvim"
@@ -34,5 +39,3 @@ alias ex="exit"
 alias exp="export"
 alias ino="arduino-cli"
 alias ghr="gh repo"
-alias cleanup="sudo pacman -Rns $(pacman -Qtdq)"
-alias uptd="yay && sudo pacman -Rns $(pacman -Qtdq)"

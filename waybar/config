@@ -3,7 +3,7 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-    "spacing": 4,
+    "spacing": 0,
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
@@ -51,10 +51,6 @@
         ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
-    },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

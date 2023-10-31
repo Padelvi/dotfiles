@@ -4,7 +4,7 @@
     floating_modifier $mod normal
 #
 # Background
-    output * bg /home/padelvi/.local/share/wallpapers/arch.png fill
+    output * bg $HOME/.local/share/wallpapers/River.png fill
 #
 # Miscellaneous key bindings
     bindsym $mod+Return exec kitty
@@ -45,19 +45,14 @@
     bindsym $mod+Shift+0 move container to workspace $wothers
 
     assign [app_id="kitty"] $w1
-    assign [class="firefox"] $w2
+    assign [app_id="firefoxdeveloperedition"] $w2
     assign [class="Spotify"] $w3
-    assign [class="GParted"] $wothers
-    assign [class="Matplotlib"] $wothers
-    assign [app_id="mpv"] $wothers
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="ulauncher"] "Ulauncher"
 
     workspace $w1 output HDMI-A-1
     workspace $w2 output HDMI-A-1
     workspace $w3 output HDMI-A-1
-    workspace $w4 output HDMI-A-1
-    workspace $w5 output HDMI-A-1
     workspace $wothers output eDP-1
     workspace "Ulauncher" output eDP-1
 #
@@ -79,6 +74,29 @@
     bindsym $mod+Control+Right exec playerctl --player=spotify volume .1+
     bindsym $mod+Control+Left exec playerctl --player=spotify volume .1-
     bindsym $mod+Shift+backslash exec playerctl -a stop
+#
+# Base16 colorschemes
+    set $base00 #2E3440
+    set $base01 #3B4252
+    set $base02 #434C5E
+    set $base03 #4C566A
+    set $base04 #D8DEE9
+    set $base05 #E5E9F0
+    set $base06 #ECEFF4
+    set $base07 #8FBCBB
+    set $base08 #BF616A
+    set $base09 #D08770
+    set $base10 #EBCB8B
+    set $base11 #A3BE8C
+    set $base12 #88C0D0
+    set $base13 #81A1C1
+    set $base14 #B48EAD
+    set $base15 #5E81AC
+
+    client.focused          $base05 $base13 $base00 $base13 $base13
+    client.focused_inactive $base01 $base01 $base05 $base03 $base01
+    client.unfocused        $base01 $base00 $base05 $base01 $base01
+    client.urgent           $base08 $base08 $base00 $base08 $base08
 #
 # Resize mode
     mode "Resize" {
@@ -129,11 +147,29 @@
     include '$("/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 #
 # Exec
-    # This is for waybar
-    exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+    # cliphist stuff
+    exec cliphist wipe
+    exec wl-paste --watch cliphist store
+
+    # Kitty and firefox
     exec kitty
     exec firefox-developer-edition
+
+    # Waydroid
     exec waydroid session start
-    exec systemctl --user start swaync.service
+
+    # Waybar
+    exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+    exec sass --watch $HOME/dotfiles/waybar/style.scss $HOME/dotfiles/waybar/style.css
     exec systemctl --user start waybar.service
+
+    # Swaync
+    exec sass --watch $HOME/dotfiles/swaync/style.scss $HOME/dotfiles/swaync/style.css
+    exec systemctl --user start swaync.service
+
+    # Wlogout
+    exec sass --watch $HOME/dotfiles/wlogout/style.scss $HOME/dotfiles/wlogout/style.css
+
+    # My gsettings script
+    exec_always $HOME/dotfiles/sway/import-gsettings.sh
 #

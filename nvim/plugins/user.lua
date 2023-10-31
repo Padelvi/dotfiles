@@ -1,5 +1,4 @@
 return {
-  -- Add plugins, the lazy syntax
   {
     "phaazon/hop.nvim",
     event = "BufRead",
@@ -15,10 +14,6 @@ return {
   {
     "elkowar/yuck.vim",
     event = "BufRead",
-  },
-  {
-    "codota/tabnine-nvim",
-    build = "./dl_binaries.sh",
   },
   {
     "edluffy/hologram.nvim",
@@ -50,4 +45,57 @@ return {
     "nanotee/zoxide.vim",
     event = "VeryLazy",
   },
+  {
+    "smoka7/multicursors.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "smoka7/hydra.nvim",
+    },
+    opts = {},
+    cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+    keys = {
+      {
+        mode = { "v", "n" },
+        "<Leader>m",
+        "<cmd>MCstart<cr>",
+        desc = "Create a selection for selected text or word under the cursor",
+      },
+    },
+  },
+  {
+    "altermo/ultimate-autopair.nvim",
+    event = { "InsertEnter", "CmdlineEnter" },
+    branch = "v0.6",
+  },
+  {
+    "nguyenvukhang/nvim-toggler",
+    event = "BufRead",
+    config = function()
+      require("nvim-toggler").setup {
+        inverses = {
+          ["vim"] = "emacs",
+        },
+        remove_default_inverses = true,
+      }
+    end,
+  },
+  -- I have not started using neotest yet
+  -- {
+  --   "nvim-neotest/neotest",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "antoinemadec/FixCursorHold.nvim",
+  --   },
+  --   event = "BufRead",
+  --   config = function()
+  --     require("neotest").setup {
+  --       adapters = {
+  --         require "neotest-python" {
+  --           runner = "pytest",
+  --         },
+  --         require "neotest-rust",
+  --       },
+  --     }
+  --   end,
+  -- },
 }

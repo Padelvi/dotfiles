@@ -1,0 +1,12 @@
+# My css file for waybar, wlogout and swaync I use sass
+waybar/style.css
+waybar/style.css.map
+wlogout/style.css
+wlogout/style.css.map
+swaync/style.css
+swaync/style.css.map
+*.css
+*.css.map
+
+# Executables that I do not keep at ~/.local/bin
+execs/
