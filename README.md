@@ -12,7 +12,7 @@ For now, I have added my configs for:
 - Waybar
 - SwayNC
 - Kitty
-- Wlogout
+- Gtk3
 - Zsh (I use oh-my-zsh)
 - Neovim (using AstroNvim)
 - Kmonad (Not using it yet)
