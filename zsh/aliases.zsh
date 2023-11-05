@@ -13,7 +13,6 @@ alias gp="git push -u origin"
 alias glo="git log"
 alias gl="git pull origin"
 alias gdf="git diff"
-alias lg="lazygit"
 
 # Python
 alias py="python3"
@@ -23,8 +22,8 @@ alias von="source ./venv/bin/activate"
 alias voff="deactivate"
 
 # Ls
-alias l="exa -lga"
-alias ll="exa -lg"
+alias l="eza -lga"
+alias ll="eza -lg"
 
 # Keyboard, I use cliphist with fzf
 alias clp="cliphist list | fzf | cliphist decode | wl-copy"
@@ -39,3 +38,4 @@ alias ex="exit"
 alias exp="export"
 alias ino="arduino-cli"
 alias ghr="gh repo"
+alias rm="echo Do not use rm, use trash instead, you wanted to delete "

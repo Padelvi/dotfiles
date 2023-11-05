@@ -26,6 +26,13 @@ plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-synt
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
+# To use pnpm
+export PNPM_HOME="/home/padelvi/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # Add ~/.local/bin to PATH
 if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
 then
