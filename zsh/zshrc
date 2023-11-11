@@ -17,6 +17,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview ''
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 export SUDO_EDITOR=nano
+export MOZ_ENABLE_WAYLAND=1
 export QT_QPA_PLATFORM=wayland
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
