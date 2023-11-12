@@ -39,3 +39,8 @@ alias exp="export"
 alias ino="arduino-cli"
 alias ghr="gh repo"
 alias rm="echo Do not use rm, use trash instead, you wanted to delete "
+
+# Some guis
+alias pavuctl="dex /usr/share/applications/pavucontrol.desktop"
+alias cgtk="dex /usr/share/applications/connman-gtk.desktop"
+alias ff="dex /usr/share/applications/firefoxdeveloperedition.desktop"
