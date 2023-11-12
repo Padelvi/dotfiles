@@ -18,6 +18,7 @@ export EDITOR=nvim
 export GIT_EDITOR=nvim
 export SUDO_EDITOR=nano
 export MOZ_ENABLE_WAYLAND=1
+export GRAVEYARD=$HOME/.local/share/Trash/files
 export QT_QPA_PLATFORM=wayland
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
@@ -27,12 +28,20 @@ plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-synt
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
-# To use pnpm
-export PNPM_HOME="/home/padelvi/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# Broot function
+function br {
+    local cmd cmd_file code
+    cmd_file=$(mktemp)
+    if broot --outcmd "$cmd_file" "$@"; then
+        cmd=$(<"$cmd_file")
+        command rm -f "$cmd_file"
+        eval "$cmd"
+    else
+        code=$?
+        command rm -f "$cmd_file"
+        return "$code"
+    fi
+}
 
 # Add ~/.local/bin to PATH
 if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
@@ -63,3 +72,4 @@ eval "$(zoxide init zsh)"
 
 # Thefuck
 eval "$(thefuck --alias)"
+
