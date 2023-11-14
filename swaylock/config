@@ -1,5 +1,5 @@
 # Background image
-image=/home/padelvi/.local/share/wallpapers/lock.png
+image=$HOME/.local/share/wallpapers/Bridge.png
 
 # Ignore empty password
 ignore-empty-password
