@@ -18,7 +18,7 @@ For now, I have added my configs for:
 
 ### Installation
 
-No install.sh script yet. I am planning to make one soon.
+I am starting to make an install.py script (obviously no deps). I would make an sh script but I know more about python scripting.
 
 ### Theme
 
