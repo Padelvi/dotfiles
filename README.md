@@ -23,3 +23,5 @@ I am starting to make an install.py script (obviously no deps). I would make an 
 ### Theme
 
 For my first rice, I was trying the [nord](https://github.com/nordtheme/nord) theme. So thanks to them!
+
+Also thanks to [this repo and its author](https://github.com/cafecitohippo/nordicvectors) for the wallpapers.
