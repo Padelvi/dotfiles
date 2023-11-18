@@ -10,12 +10,9 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.rust" },
   -- Other
-  -- { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   { import = "astrocommunity.utility.neodim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.editing-support.mini-splitjoin" },
