@@ -22,9 +22,10 @@ export GRAVEYARD=$HOME/.local/share/Trash/files
 export QT_QPA_PLATFORM=wayland
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
+export XCURSOR_THEME=Radioactive-nord
 
 # Plugins
-plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use zoxide)
+plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use zoxide zabb)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
