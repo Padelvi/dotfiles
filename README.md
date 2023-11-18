@@ -24,4 +24,10 @@ I am starting to make an install.py script (obviously no deps). I would make an 
 
 For my first rice, I was trying the [nord](https://github.com/nordtheme/nord) theme. So thanks to them!
 
-Also thanks to [this repo and its author](https://github.com/cafecitohippo/nordicvectors) for the wallpapers.
+### Thanks
+
+My dots for my nord theme uses these repos (thanks to their authors):
+
+- [Base16-kitty](https://github.com/kdrag0n/base16-kitty) for the kitty theme config.
+- [Base16-sway](https://github.com/rkubosz/base16-sway) for the sway nord theme config.
+- [This repo](https://github.com/cafecitohippo/nordicvectors) for the wallpapers.
