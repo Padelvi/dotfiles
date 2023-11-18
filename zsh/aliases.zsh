@@ -21,7 +21,7 @@ alias pyv="python3 -m venv venv"
 alias von="source ./venv/bin/activate"
 alias voff="deactivate"
 
-# Ls
+# Ls replacement: eza
 alias l="eza -lga"
 alias ll="eza -lg"
 
@@ -29,6 +29,13 @@ alias ll="eza -lg"
 alias clp="cliphist list | fzf | cliphist decode | wl-copy"
 alias cld="cliphist list | fzf | cliphist delete"
 alias clw="cliphist wipe"
+
+# Some guis
+alias pavuctl="dex /usr/share/applications/pavucontrol.desktop"
+alias cgtk="dex /usr/share/applications/connman-gtk.desktop"
+alias ff="dex /usr/share/applications/firefoxdeveloperedition.desktop"
+alias kra="dex /usr/share/applications/org.kde.krita.desktop"
+alias ink="dex /usr/share/applications/org.inkscape.Inkscape.desktop"
 
 # Others
 alias nv="nvim"
@@ -39,8 +46,3 @@ alias exp="export"
 alias ino="arduino-cli"
 alias ghr="gh repo"
 alias rm="echo Do not use rm, use trash instead, you wanted to delete "
-
-# Some guis
-alias pavuctl="dex /usr/share/applications/pavucontrol.desktop"
-alias cgtk="dex /usr/share/applications/connman-gtk.desktop"
-alias ff="dex /usr/share/applications/firefoxdeveloperedition.desktop"
