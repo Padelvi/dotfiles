@@ -182,5 +182,5 @@
     exec wireplumber
 
     # My gsettings script
-    exec_always $HOME/dotfiles/sway/import-gsettings.sh
+    exec $HOME/dotfiles/sway/import-gsettings.sh
 #
