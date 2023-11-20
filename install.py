@@ -1,20 +1,36 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import os
 import sys
 import platform
 
+"""
+This script links every dir to where it should be and if in arch or artix linux tries to install needed packages.
+The dir is expected to be /home/$USER/dotfiles
+For now it should be in that dir, later I'll add an option to modify it if necessary.
+Licensed under MIT, see LICENSE in the root dir of the repository for more details.
+"""
+
 def install(in_arch: bool):
     user = os.environ.get("USER") if os.environ.get("USER") else os.environ.get("USERNAME")
-    if user == "root" and not in_arch:
-        print("Root is only for installing packages. If you do not use arch run as your user.")
-        sys.exit(1)
+    if user == "root":
+        if in_arch:
+            with open("pkglist.txt", "rt") as f:
+                pkgs = tuple(map(lambda s: s[:-1], f.readlines()))
+            if input("Also install packages from AUR (y/n)? ") in ("y", "yes"):
+                with open("aur.txt", "rt") as f:
+                    aur = tuple(map(lambda s: s[:-1], f.readlines()))
+                    print(aur)
+            print(pkgs)
+        else:
+            print("Root is only for installing packages. If you do not use arch run as your user.")
+            sys.exit(1)
     print(f"Running as {user}")
 
     args = sys.argv[1:]
     print(args)
 
-    dir = {"README.md", "nvim", "gtk-3.0", "swaylock", "zsh", "sway", "kitty", "swaync", ".git", "completions", "install.py", "waybar", ".gitignore", "LICENSE"}
+    dir = {"README.md", "nvim", "gtk-3.0", "swaylock", "zsh", "sway", "kitty", "swaync", ".git", "completions", "install.py", "waybar", ".gitignore", "LICENSE", "aur.txt", "pkglist.txt"}
     assert set(os.listdir()) == dir 
     unimportant = ("README.md", ".git", "install.py", ".gitignore", "LICENSE")
     for f in unimportant:
