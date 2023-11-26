@@ -116,4 +116,27 @@ return {
     },
     config = function() require("refactoring").setup() end,
   },
+  {
+    "pysan3/autosession.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("autosession").setup {
+        msg = nil,
+        restore_on_setup = false,
+        warn_on_setup = true,
+        autosave_on_quit = true,
+        force_autosave = false,
+        sessionfile_name = ".session.vim",
+      }
+    end,
+  },
+  {
+    "mikesmithgh/kitty-scrollback.nvim",
+    enabled = true,
+    lazy = true,
+    cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
+    event = { "User KittyScrollbackLaunch" },
+    version = "*",
+    config = function() require("kitty-scrollback").setup() end,
+  },
 }
