@@ -1,0 +1,5 @@
+type = process
+logfile = $HOME/.local/share/dinit/waydroid.log
+command = waydroid container start
+stop-command = waydroid container stop && waydroid session stop
+restart = true
