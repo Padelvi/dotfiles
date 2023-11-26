@@ -139,4 +139,8 @@ return {
     version = "*",
     config = function() require("kitty-scrollback").setup() end,
   },
+  {
+    "fladson/vim-kitty",
+    event = "VeryLazy",
+  },
 }
