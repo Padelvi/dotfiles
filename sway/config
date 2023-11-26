@@ -69,14 +69,13 @@
     bindsym $mod+space floating toggle
 #
 # Playerctl
-    bindsym $mod+backslash exec playerctl --player=spotify play-pause
-    bindsym $mod+apostrophe exec playerctl --player=spotify previous
-    bindsym $mod+quotedbl exec playerctl --player=spotify next
-    bindsym $mod+Control+comma exec playerctl --player=spotify position 5-
-    bindsym $mod+Control+period exec playerctl --player=spotify position 5+
-    bindsym $mod+Control+Right exec playerctl --player=spotify volume .1+
-    bindsym $mod+Control+Left exec playerctl --player=spotify volume .1-
-    bindsym $mod+Shift+backslash exec playerctl -a stop
+    bindsym $mod+backslash exec playerctl play-pause
+    bindsym $mod+apostrophe exec playerctl previous
+    bindsym $mod+quotedbl exec playerctl next
+    bindsym $mod+Control+comma exec playerctl position 5-
+    bindsym $mod+Control+period exec playerctl position 5+
+    bindsym $mod+Control+Right exec playerctl volume .1+
+    bindsym $mod+Control+Left exec playerctl volume .1-
 #
 # Base16 colorschemes
     set $base00 #2E3440
