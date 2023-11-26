@@ -50,6 +50,7 @@ button:hover {
 #pulseaudio,
 #custom-media,
 #mode,
+#custom-notification,
 #scratchpad {
   padding: 0 10px;
   margin: 0;
@@ -83,6 +84,10 @@ label:focus {
 
 #network.disconnected {
   background-color: #bf616a;
+}
+
+#custom-notification {
+  background-color: #b48ead;
 }
 
 #pulseaudio {

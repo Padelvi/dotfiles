@@ -12,7 +12,6 @@
     "modules-center": [],
     "modules-right": [
         "custom/notification",
-        "custom/media",
         "pulseaudio",
         "network",
         "clock"
@@ -32,7 +31,7 @@
         }
     },
     "keyboard-state": {
-        "numlock": true,
+        "numlock": false,
         "capslock": true,
         "format": "{name} {icon}",
         "format-icons": {
@@ -84,18 +83,9 @@
                 "",
                 ""
             ]
-        }
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
         },
-        "escape": true,
-        "exec": "mediaplayer --player spotify 2> /dev/null"
+        "on-click": "pavucontrol",
+        "on-click-right": "pavucontrol"
     },
     "custom/notification": {
         "tooltip": false,
