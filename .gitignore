@@ -3,3 +3,6 @@ waybar/style.css
 waybar/style.css.map
 swaync/style.css
 swaync/style.css.map
+
+# For now, spotify password in here
+spotifyd/password.txt
