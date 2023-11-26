@@ -15,8 +15,10 @@ For now, I have added my configs for:
 - SwayNC
 - Kitty
 - Gtk3
+- Spotifyd
 - Zsh (I use oh-my-zsh)
 - Neovim (using AstroNvim)
+- Dinit scripts for various stuff
 
 Also you will notice [aur.txt](https://github.com/Padelvi/dotfiles/blob/main/aur.txt) and [pkglist.txt](https://github.com/Padelvi/dotfiles/blob/main/pkglist.txt) in the root dir. Those contain package lists for arch or artix (If you have support for the extra repo).
 
@@ -34,8 +36,9 @@ I decided to license this repo (unlike the rest) under MIT so everyone can use t
 
 ### Thanks
 
-My dots for my nord theme uses these repos (thanks to their authors):
+My dotfiles borrow some code from these repos (thanks to their authors):
 
-- [Base16-kitty](https://github.com/kdrag0n/base16-kitty) for the kitty theme config.
+- [Base16-kitty](https://github.com/kdrag0n/base16-kitty) for the kitty nord theme config.
 - [Base16-sway](https://github.com/rkubosz/base16-sway) for the sway nord theme config.
-- [This repo](https://github.com/cafecitohippo/nordicvectors) for the wallpapers.
+- [Vim-kitty-navigator plugin](https://github.com/knubie/vim-kitty-navigator) for the kitty/pass_keys.py and kitty/neighboring_window.py files.
+- [This repo](https://github.com/cafecitohippo/nordicvectors) for the wallpapers (That is not code but whatever).
