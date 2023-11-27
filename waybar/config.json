@@ -1,4 +1,3 @@
-// vim: ft=json
 {
     "layer": "top",
     "position": "top",
@@ -11,6 +10,7 @@
     ],
     "modules-center": [],
     "modules-right": [
+        "mpris",
         "custom/notification",
         "pulseaudio",
         "network",
@@ -30,27 +30,8 @@
             "default": ""
         }
     },
-    "keyboard-state": {
-        "numlock": false,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": [
-            "",
-            ""
-        ],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -84,8 +65,14 @@
                 ""
             ]
         },
-        "on-click": "pavucontrol",
-        "on-click-right": "pavucontrol"
+        "on-click": "pavucontrol"
+    },
+    "mpris": {
+        "format": "▶ {title}({artist})",
+        "format-paused": "⏸ {title}({artist})",
+        "ignored-players": [
+            "firefox"
+        ]
     },
     "custom/notification": {
         "tooltip": false,
