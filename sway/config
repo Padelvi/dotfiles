@@ -10,7 +10,7 @@
     bindsym $mod+Return exec kitty
     bindsym $mod+Shift+q kill
     bindsym $mod+Shift+r reload
-    bindsym $mod+n exec swaync-client -t -swb
+    bindsym $mod+n exec swaync-client -t -sw
 #
 # Moving and focusing
     bindsym $mod+Left focus left
@@ -26,29 +26,25 @@
 # Workspaces
     set $w1 "1: Term"
     set $w2 "2: Browser"
-    set $w3 "3: Spotify"
-    set $w4 "4: Krita"
-    set $w5 "5: Inkscape"
+    set $w3 "3: Krita"
+    set $w4 "4: Inkscape"
     set $wothers "Others"
 
     bindsym $mod+1 workspace $w1
     bindsym $mod+2 workspace $w2
     bindsym $mod+3 workspace $w3
     bindsym $mod+4 workspace $w4
-    bindsym $mod+5 workspace $w5
     bindsym $mod+0 workspace $wothers
     bindsym $mod+Shift+1 move container to workspace $w1
     bindsym $mod+Shift+2 move container to workspace $w2
     bindsym $mod+Shift+3 move container to workspace $w3
     bindsym $mod+Shift+4 move container to workspace $w4
-    bindsym $mod+Shift+5 move container to workspace $w5
     bindsym $mod+Shift+0 move container to workspace $wothers
 
     assign [app_id="kitty"] $w1
     assign [app_id="firefoxdeveloperedition"] $w2
-    assign [class="Spotify"] $w3
-    assign [class="krita"] $w4
-    assign [app_id="org.inkscape.Inkscape"] $w5
+    assign [class="krita"] $w3
+    assign [app_id="org.inkscape.Inkscape"] $w4
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="connman-gtk"] $wothers
 
@@ -56,7 +52,6 @@
     workspace $w2 output HDMI-A-1
     workspace $w3 output HDMI-A-1
     workspace $w4 output HDMI-A-1
-    workspace $w5 output HDMI-A-1
     workspace $wothers output eDP-1
 #
 # Layout
@@ -76,6 +71,12 @@
     bindsym $mod+Control+period exec playerctl position 5+
     bindsym $mod+Control+Right exec playerctl volume .1+
     bindsym $mod+Control+Left exec playerctl volume .1-
+#
+# Shotman
+    bindsym $mod+o exec shotman --capture window
+    bindsym $mod+Shift+o exec shotman --capture window -C
+    bindsym $mod+p exec shotman --capture region
+    bindsym $mod+Shift+p exec shotman --capture region -C
 #
 # Base16 colorschemes
     set $base00 #2E3440
@@ -116,12 +117,6 @@
         bindsym $mod+r mode "default"
     }
     bindsym $mod+r mode "Resize"
-#
-# Shotman
-    bindsym $mod+o exec shotman --capture window
-    bindsym $mod+Shift+o exec shotman --capture window -C
-    bindsym $mod+p exec shotman --capture region
-    bindsym $mod+Shift+p exec shotman --capture region -C
 #
 # Special keys, char mode
     mode "Keys" {
