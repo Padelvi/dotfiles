@@ -44,6 +44,10 @@ window#waybar.empty {
   color: $nord0;
 }
 
+#workspaces button.urgent {
+  background-color: $nord11;
+}
+
 button {
   border: none;
   border-radius: 0;
@@ -54,19 +58,16 @@ button:hover {
   box-shadow: inset 0 -3px $nord6;
 }
 
-#workspaces button.urgent {
-  background-color: $nord11;
-}
-
-#mode {
-  background-color: $nord7;
+label:focus {
+  background-color: $nord0;
 }
 
 #clock,
 #network,
-#pulseaudio,
+#wireplumber,
 #custom-media,
 #mode,
+#mpris,
 #custom-notification,
 #scratchpad {
   padding: 0 10px;
@@ -91,8 +92,8 @@ button:hover {
   background-color: $nord9;
 }
 
-label:focus {
-  background-color: $nord0;
+#mode {
+  background-color: $nord7;
 }
 
 #network {
@@ -107,25 +108,14 @@ label:focus {
   background-color: $nord15;
 }
 
-#pulseaudio {
+#wireplumber {
   background-color: $nord13;
 }
 
-#pulseaudio.muted {
+#wireplumber.muted {
   background-color: #90b1b1;
-  color: #2a5c45;
 }
 
-#custom-media {
-  background-color: #66cc99;
-  color: #2a5c45;
-  min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-  background-color: #66cc99;
-}
-
-#scratchpad {
-  background-color: $nord1;
+#mpris {
+  background-color: $nord10;
 }
