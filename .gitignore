@@ -1,7 +1,5 @@
-# My css file for waybar, wlogout and swaync I use sass
-waybar/style.css
+# My css map files for waybar and swaync (I use sass)
 waybar/style.css.map
-swaync/style.css
 swaync/style.css.map
 
 # For now, spotify password in here
