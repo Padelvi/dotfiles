@@ -48,14 +48,5 @@ return {
       },
     },
   },
-  polish = function()
-    -- vim.filetype.add {
-    --   -- extension = {
-    --   --   dockerignore = "fooscript",
-    --   -- },
-    --   filename = {
-    --     [".dockerignore"] = "gitignore",
-    --   },
-    -- }
-  end,
+  polish = function() end,
 }

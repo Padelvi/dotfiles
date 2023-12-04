@@ -2,5 +2,6 @@
 waybar/style.css.map
 swaync/style.css.map
 
-# For now, spotify password in here
+# For now, spotify credentials in here
 spotifyd/password.txt
+spotifyd/client.json
