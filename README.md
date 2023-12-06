@@ -8,7 +8,6 @@ Also, as a dev, I code in python (and also starting with rust). My editor is neo
 
 For now, I have added my configs for:
 
-- My completion scripts
 - Sway
 - Swaylock
 - Waybar
