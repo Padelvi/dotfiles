@@ -21,7 +21,7 @@ For now, I have added my configs for:
 
 ### Installation
 
-I am made an [install.py](https://github.com/Padelvi/dotfiles/blob/main/install.py) script (obviously no deps). I would have made an sh script but I know more about python scripting.
+I made an [install.py](https://github.com/Padelvi/dotfiles/blob/main/install.py) script (obviously no deps). I would have made an sh script but I know more about python scripting.
 
 ### Theme
 
