@@ -19,11 +19,9 @@ For now, I have added my configs for:
 - Neovim (using AstroNvim)
 - Dinit scripts for various stuff
 
-Also you will notice [aur.txt](https://github.com/Padelvi/dotfiles/blob/main/aur.txt) and [pkglist.txt](https://github.com/Padelvi/dotfiles/blob/main/pkglist.txt) in the root dir. Those contain package lists for arch or artix (If you have support for the extra repo).
-
 ### Installation
 
-I am starting to make an [install.py](https://github.com/Padelvi/dotfiles/blob/main/install.py) script (obviously no deps). I would make an sh script but I know more about python scripting.
+I am made an [install.py](https://github.com/Padelvi/dotfiles/blob/main/install.py) script (obviously no deps). I would have made an sh script but I know more about python scripting.
 
 ### Theme
 
