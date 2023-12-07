@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Callable
 
 """
-This script links every dir to where it should be and if in arch or artix linux tries to install needed packages.
+This script links every dir to where it should be, having checked that the os is 'linux' via the sys.platform constant.
 The dir is expected to be /home/$USER/dotfiles
 For now it should be in that dir, later I'll add an option to modify it if necessary.
 Licensed under MIT, see LICENSE in the root dir of the repository for more details.
@@ -48,6 +48,16 @@ def install_swaync(user: str):
     link(f"{src}/config.json", f"{dst}/config.json")
     link(f"{src}/style.css", f"{dst}/style.css")
 
+def install_dinit(user: str):
+    home = f"/home/{user}"
+    src = f"{home}/dotfiles/dinit"
+    dst = f"{home}/.config/dinit.d/boot.d"
+    dst_path = Path(dst)
+    if not dst_path.exists():
+        dst_path.mkdir()
+    for service in Path(src).iterdir():
+        os.symlink(str(service), f"{dst}/{str(service).split('/')[-1]}")
+
 def install():
     user = os.environ.get("USER") if os.environ.get("USER") else os.environ.get("USERNAME")
     if user == "root":
@@ -72,9 +82,10 @@ def install():
             "nvim": install_nvim,
             "waybar": install_waybar,
             "swaync": install_swaync,
+            "dinit": install_dinit,
         }
 
-        unimportant = ("README.md", ".git", "install.py", ".gitignore", "LICENSE", "dinit")
+        unimportant = ("README.md", ".git", "install.py", ".gitignore", "LICENSE")
         assert set(map(lambda p: p.parts[-1], dotfiles.iterdir())) == {*install_in_config_home, *install_special.keys(), *unimportant}
 
         print("Starting installation...")
