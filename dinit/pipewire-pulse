@@ -1,0 +1,6 @@
+type = process
+load-options = sub-vars
+logfile = /home/padelvi/.local/share/dinit/pipewire-pulse.log
+command = /usr/bin/pipewire-pulse
+restart = true
+depends-on = pipewire

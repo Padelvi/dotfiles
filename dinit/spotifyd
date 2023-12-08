@@ -1,3 +1,5 @@
 type = process
 command = /usr/bin/spotifyd --no-daemon
 restart = true
+logfile = /home/padelvi/.local/share/dinit/spotifyd.log
+depends-on = wireplumber

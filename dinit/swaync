@@ -1,3 +1,4 @@
 type = process
 command = /usr/bin/swaync
 restart = true
+logfile = /home/padelvi/.local/share/dinit/swaync.log

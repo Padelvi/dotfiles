@@ -18,6 +18,12 @@ def link(src: str, dst: str):
         dst_path.rename(Path(str(dst) + ".bak"))
     os.symlink(src, dst)
 
+def linkdel(src: str, dst: str):
+    dst_path = Path(dst)
+    if dst_path.exists():
+        os.remove(dst)
+    os.symlink(src, dst)
+
 def install_zsh(user: str):
     home = f"/home/{user}"
     src = f"{home}/dotfiles/zsh"
@@ -51,12 +57,12 @@ def install_swaync(user: str):
 def install_dinit(user: str):
     home = f"/home/{user}"
     src = f"{home}/dotfiles/dinit"
-    dst = f"{home}/.config/dinit.d/boot.d"
+    dst = f"{home}/.config/dinit.d"
     dst_path = Path(dst)
     if not dst_path.exists():
         dst_path.mkdir()
     for service in Path(src).iterdir():
-        os.symlink(str(service), f"{dst}/{str(service).split('/')[-1]}")
+        linkdel(str(service), f"{dst}/{str(service).split('/')[-1]}")
 
 def install():
     user = os.environ.get("USER") if os.environ.get("USER") else os.environ.get("USERNAME")

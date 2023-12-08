@@ -1,0 +1,6 @@
+type = process
+load-options = sub-vars
+logfile = /home/padelvi/.local/share/dinit/pipewire.log
+command = /usr/bin/pipewire
+restart = true
+depends-on = dbus

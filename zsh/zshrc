@@ -1,6 +1,3 @@
-# Completions for arduino-cli and eza
-fpath=($HOME/dotfiles/completions $fpath)
-
 # Battery prompt
 RPROMPT='$(battery_pct_prompt)'
 
@@ -25,7 +22,7 @@ export XDG_CURRENT_DESKTOP=sway
 export XCURSOR_THEME=Radioactive-nord
 
 # Plugins
-plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search zsh-syntax-highlighting zsh-you-should-use zoxide zabb)
+plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search fast-syntax-highlighting zsh-you-should-use zoxide zabb)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 

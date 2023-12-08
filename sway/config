@@ -167,16 +167,12 @@
     # Waybar
     exec dbus-update-activation-environment --all
     exec sass --watch $HOME/dotfiles/waybar/style.scss $HOME/dotfiles/waybar/style.css
-    exec waybar
 
     # Swaync
     exec sass --watch $HOME/dotfiles/swaync/style.scss $HOME/dotfiles/swaync/style.css
-    exec swaync
 
-    # Pipewire, I'll remove this soon
-    exec pipewire
-    exec pipewire-pulse
-    exec wireplumber
+    # My local dinit
+    exec dinit --user
 
     # My gsettings script
     exec $HOME/dotfiles/sway/import-gsettings.sh

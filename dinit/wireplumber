@@ -1,0 +1,7 @@
+type = process
+load-options = sub-vars
+logfile = /home/padelvi/.local/share/dinit/wireplumber.log
+command = /usr/bin/wireplumber
+restart = true
+smooth-recovery = true
+depends-on = pipewire
