@@ -66,7 +66,7 @@ def install_dinit(user: str, backup: bool):
     for service in Path(src).iterdir():
         link(str(service), f"{dst}/{str(service).split('/')[-1]}", backup)
 
-def install(backup: bool):
+def install():
     user = os.environ.get("USER") if os.environ.get("USER") else os.environ.get("USERNAME")
     if user == "root":
         print("It's not neccesary to run this as root.")
@@ -96,7 +96,9 @@ def install(backup: bool):
         unimportant = ("README.md", ".git", "install.py", ".gitignore", "LICENSE")
         assert set(map(lambda p: p.parts[-1], dotfiles.iterdir())) == {*install_in_config_home, *install_special.keys(), *unimportant}
 
-        print("Starting installation...")
+        backup = input("Skip backups (y/N)? ").lower() not in ("y", "yes")
+
+        print("\nStarting installating configs...")
 
         for config in install_in_config_home:
             print(f"Installing {config} configs...")
@@ -113,4 +115,4 @@ if __name__ == "__main__":
     if sys.platform != "linux":
         print("Get linux!")
         sys.exit(1)
-    install(input("Skip backups (y/N)? ").lower() not in ("y", "yes"))
+    install()
