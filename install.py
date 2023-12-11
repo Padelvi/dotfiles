@@ -12,49 +12,51 @@ For now it should be in that dir, later I'll add an option to modify it if neces
 Licensed under MIT, see LICENSE in the root dir of the repository for more details.
 """
 
-def link(src: str, dst: str):
-    dst_path = Path(dst)
-    if dst_path.exists():
-        dst_path.rename(Path(str(dst) + ".bak"))
-    os.symlink(src, dst)
-
 def linkdel(src: str, dst: str):
     dst_path = Path(dst)
     if dst_path.exists():
         os.remove(dst)
     os.symlink(src, dst)
 
-def install_zsh(user: str):
+def link(src: str, dst: str, backup: bool):
+    if not backup:
+        return linkdel(src, dst)
+    dst_path = Path(dst)
+    if dst_path.exists():
+        dst_path.rename(Path(str(dst) + ".bak"))
+    os.symlink(src, dst)
+
+def install_zsh(user: str, backup: bool):
     home = f"/home/{user}"
     src = f"{home}/dotfiles/zsh"
-    link(f"{src}/zshrc", f"{home}/.zshrc")
-    link(f"{src}/aliases.zsh", f"{home}/.oh-my-zsh/custom/aliases.zsh")
+    link(f"{src}/zshrc", f"{home}/.zshrc", backup)
+    link(f"{src}/aliases.zsh", f"{home}/.oh-my-zsh/custom/aliases.zsh", backup)
 
-def install_nvim(user: str):
+def install_nvim(user: str, backup: bool):
     home = f"/home/{user}"
-    link(f"{home}/dotfiles/nvim", f"{home}/.config/nvim/lua/user")
+    link(f"{home}/dotfiles/nvim", f"{home}/.config/nvim/lua/user", backup)
 
-def install_waybar(user: str):
+def install_waybar(user: str, backup: bool):
     home = f"/home/{user}"
     src = f"{home}/dotfiles/waybar"
     dst = f"{home}/.config/waybar"
     dst_path = Path(dst)
     if not dst_path.exists():
         dst_path.mkdir()
-    link(f"{src}/config.json", f"{dst}/config")
-    link(f"{src}/style.css", f"{dst}/style.css")
+    link(f"{src}/config.json", f"{dst}/config", backup)
+    link(f"{src}/style.css", f"{dst}/style.css", backup)
 
-def install_swaync(user: str):
+def install_swaync(user: str, backup: bool):
     home = f"/home/{user}"
     src = f"{home}/dotfiles/swaync"
     dst = f"{home}/.config/swaync"
     dst_path = Path(dst)
     if not dst_path.exists():
         dst_path.mkdir()
-    link(f"{src}/config.json", f"{dst}/config.json")
-    link(f"{src}/style.css", f"{dst}/style.css")
+    link(f"{src}/config.json", f"{dst}/config.json", backup)
+    link(f"{src}/style.css", f"{dst}/style.css", backup)
 
-def install_dinit(user: str):
+def install_dinit(user: str, backup: bool):
     home = f"/home/{user}"
     src = f"{home}/dotfiles/dinit"
     dst = f"{home}/.config/dinit.d"
@@ -62,9 +64,9 @@ def install_dinit(user: str):
     if not dst_path.exists():
         dst_path.mkdir()
     for service in Path(src).iterdir():
-        linkdel(str(service), f"{dst}/{str(service).split('/')[-1]}")
+        link(str(service), f"{dst}/{str(service).split('/')[-1]}", backup)
 
-def install():
+def install(backup: bool):
     user = os.environ.get("USER") if os.environ.get("USER") else os.environ.get("USERNAME")
     if user == "root":
         print("It's not neccesary to run this as root.")
@@ -83,7 +85,7 @@ def install():
             "spotifyd",
         )
 
-        install_special: dict[str, Callable[[str], None]] = {
+        install_special: dict[str, Callable[[str, bool], None]] = {
             "zsh": install_zsh,
             "nvim": install_nvim,
             "waybar": install_waybar,
@@ -98,11 +100,11 @@ def install():
 
         for config in install_in_config_home:
             print(f"Installing {config} configs...")
-            link(f"{dotfiles}/{config}", f"{config_home}/{config}")
+            link(f"{dotfiles}/{config}", f"{config_home}/{config}", backup)
 
         for config in install_special.keys():
             print(f"Installing {config} configs...")
-            install_special[config](user)
+            install_special[config](user, backup)
     else:
         print("Unknown user, define env variables USER or USERNAME")
         sys.exit(1)
@@ -111,4 +113,4 @@ if __name__ == "__main__":
     if sys.platform != "linux":
         print("Get linux!")
         sys.exit(1)
-    install()
+    install(input("Skip backups (y/N)? ").lower() not in ("y", "yes"))
