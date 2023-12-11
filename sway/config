@@ -143,9 +143,6 @@
     }
     bindsym $mod+$alt+k mode "Keys"
 #
-# Including other files
-    include '$("/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
-#
 # Keyboard
     input "type:keyboard" {
         xkb_layout us,de
@@ -156,24 +153,7 @@
     font pango:Cousine Medium 11
 #
 # Exec
-    # Cliphist stuff
     exec cliphist wipe
-    exec wl-paste --watch cliphist store
-
-    # Kitty and firefox dev edition
     exec kitty
-    exec firefox-developer-edition
-
-    # Waybar
-    exec dbus-update-activation-environment --all
-    exec sass --watch $HOME/dotfiles/waybar/style.scss $HOME/dotfiles/waybar/style.css
-
-    # Swaync
-    exec sass --watch $HOME/dotfiles/swaync/style.scss $HOME/dotfiles/swaync/style.css
-
-    # My local dinit
     exec dinit --user
-
-    # My gsettings script
-    exec $HOME/dotfiles/sway/import-gsettings.sh
 #
