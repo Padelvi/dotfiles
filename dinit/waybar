@@ -2,3 +2,4 @@ type = process
 command = /usr/bin/waybar
 restart = true
 logfile = /home/padelvi/.local/share/dinit/waybar.log
+depends-on = waybar-sass

@@ -1,0 +1,3 @@
+type = process
+command = /home/padelvi/.local/bin/sass --watch /home/padelvi/dotfiles/waybar/style.scss /home/padelvi/dotfiles/waybar/style.css
+restart = true
