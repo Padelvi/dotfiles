@@ -1,0 +1,4 @@
+type = process
+command = /usr/bin/otd-daemon
+restart = true
+logfile = /home/padelvi/.local/share/dinit/opentabletdriver.log
