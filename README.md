@@ -13,7 +13,6 @@ For now, I have added my configs for:
 - Waybar
 - SwayNC
 - Kitty
-- Gtk3
 - Spotifyd
 - Zsh (I use oh-my-zsh)
 - Neovim (using AstroNvim)
