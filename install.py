@@ -30,6 +30,8 @@ def install_zsh(user: str, backup: bool):
     home = f"/home/{user}"
     src = f"{home}/dotfiles/zsh"
     link(f"{src}/zshrc", f"{home}/.zshrc", backup)
+    link(f"{src}/zprofile", f"{home}/.zprofile", backup)
+    link(f"{src}/zshenv", f"{home}/.zshenv", backup)
     link(f"{src}/aliases.zsh", f"{home}/.oh-my-zsh/custom/aliases.zsh", backup)
 
 def install_nvim(user: str, backup: bool):
@@ -78,7 +80,6 @@ def install():
         config_home = Path(f"/home/{user}/.config")
 
         install_in_config_home = (
-            "gtk-3.0",
             "swaylock",
             "sway",
             "kitty",
