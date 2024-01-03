@@ -47,6 +47,7 @@
     assign [app_id="org.inkscape.Inkscape"] $w4
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="connman-gtk"] $wothers
+    assign [app_id="OpenTabletDriver.UX"] $wothers
 
     workspace $w1 output HDMI-A-1
     workspace $w2 output HDMI-A-1
@@ -153,7 +154,5 @@
     font pango:Cousine Medium 11
 #
 # Exec
-    exec cliphist wipe
     exec kitty
-    exec dinit --user
 #

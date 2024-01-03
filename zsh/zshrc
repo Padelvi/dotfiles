@@ -10,17 +10,6 @@ zstyle ':omz:update' mode disabled
 # Fzf zsh config via zstyle
 zstyle ':fzf-tab:complete:cd:*' fzf-preview ''
 
-# Env vars
-export EDITOR=nvim
-export GIT_EDITOR=nvim
-export SUDO_EDITOR=nano
-export MOZ_ENABLE_WAYLAND=1
-export GRAVEYARD=$HOME/.local/share/Trash/files
-export QT_QPA_PLATFORM=wayland
-export XDG_SESSION_DESKTOP=sway
-export XDG_CURRENT_DESKTOP=sway
-export XCURSOR_THEME=Radioactive-nord
-
 # Plugins
 plugins=(sudo battery zsh-interactive-cd fzf-tab zsh-fzf-history-search fast-syntax-highlighting zsh-you-should-use zoxide zabb)
 
@@ -71,3 +60,8 @@ eval "$(zoxide init zsh)"
 # Thefuck
 eval "$(thefuck --alias)"
 
+# Check if dinit is running, if it is not then start it
+DINIT_SOCKET=/run/user/1000/dinitctl
+if [[ ! -e "$DINIT_SOCKET" ]]; then
+    dinit --user --quiet &
+fi
