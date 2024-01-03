@@ -1,0 +1,4 @@
+type = process
+command = /usr/bin/otd-gui
+restart = false
+depends-on = opentabletdriver
