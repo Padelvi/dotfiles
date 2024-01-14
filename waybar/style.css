@@ -48,11 +48,10 @@ label:focus {
 #clock,
 #network,
 #wireplumber,
-#custom-media,
 #mode,
 #mpris,
 #custom-notification,
-#scratchpad {
+#bluetooth {
   padding: 0 10px;
   margin: 0;
   color: #2e3440;
@@ -88,7 +87,7 @@ label:focus {
 }
 
 #custom-notification {
-  background-color: #b48ead;
+  background-color: #88c0d0;
 }
 
 #wireplumber {
@@ -96,10 +95,14 @@ label:focus {
 }
 
 #wireplumber.muted {
-  background-color: #90b1b1;
+  background-color: #b48ead;
 }
 
 #mpris {
+  background-color: #a3be8c;
+}
+
+#bluetooth {
   background-color: #5e81ac;
 }
 

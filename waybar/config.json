@@ -7,6 +7,7 @@
   "modules-center": [],
   "modules-right": [
     "mpris",
+    "bluetooth",
     "custom/notification",
     "wireplumber",
     "network",
@@ -43,15 +44,24 @@
   },
   "wireplumber": {
     "format": "{volume}%",
-    "format-muted": "",
+    "format-muted": "Muted",
     "on-click": "pavucontrol",
     "max-volume": 100,
     "scroll-step": 1.0
   },
   "mpris": {
-    "format": "▶ {title} [{album}]",
-    "format-paused": "⏸ {title} [{album}]",
-    "ignored-players": ["firefox"]
+    "format": "{player_icon} {title} [{artist}] ▶",
+    "format-paused": "{player_icon} {title} [{artist}] ⏸",
+    "format-stopped": "Nothing playing now ⏹",
+    "player-icons": {
+      "default": "🎵",
+      "firefox": ""
+    },
+    "ignored-players": []
+  },
+  "bluetooth": {
+    "format": " Not connected",
+    "format-connected": " Connected: {device_alias}"
   },
   "custom/notification": {
     "tooltip": false,
