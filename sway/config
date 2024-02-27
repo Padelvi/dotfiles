@@ -3,25 +3,17 @@
     set $alt Mod1
     floating_modifier $mod normal
 #
+# Keyboard
+    input "type:keyboard" {
+        xkb_layout us,de
+        xkb_options caps:escape
+    }
+#
+# Fonts and icons
+    font pango:Cousine Medium 11
+#
 # Background
     output * bg $HOME/.local/share/wallpapers/River.png fill
-#
-# Miscellaneous key bindings
-    bindsym $mod+Return exec kitty
-    bindsym $mod+Shift+q kill
-    bindsym $mod+Shift+r reload
-    bindsym $mod+n exec swaync-client -t -sw
-#
-# Moving and focusing
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
-
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
 #
 # Workspaces
     set $w1 "1: Term"
@@ -29,17 +21,6 @@
     set $w3 "3: Krita"
     set $w4 "4: Inkscape"
     set $wothers "Others"
-
-    bindsym $mod+1 workspace $w1
-    bindsym $mod+2 workspace $w2
-    bindsym $mod+3 workspace $w3
-    bindsym $mod+4 workspace $w4
-    bindsym $mod+0 workspace $wothers
-    bindsym $mod+Shift+1 move container to workspace $w1
-    bindsym $mod+Shift+2 move container to workspace $w2
-    bindsym $mod+Shift+3 move container to workspace $w3
-    bindsym $mod+Shift+4 move container to workspace $w4
-    bindsym $mod+Shift+0 move container to workspace $wothers
 
     assign [app_id="kitty"] $w1
     assign [app_id="firefoxdeveloperedition"] $w2
@@ -54,33 +35,6 @@
     workspace $w3 output HDMI-A-1
     workspace $w4 output HDMI-A-1
     workspace $wothers output eDP-1
-#
-# Layout
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
-    bindsym $mod+f fullscreen
-    bindsym $mod+d focus child
-    bindsym $mod+Shift+d focus parent
-    bindsym $mod+space floating toggle
-#
-# Playerctl
-    bindsym $mod+backslash exec playerctl play-pause
-    bindsym $mod+apostrophe exec playerctl previous
-    bindsym $mod+quotedbl exec playerctl next
-    bindsym $mod+Control+comma exec playerctl position 5-
-    bindsym $mod+Control+period exec playerctl position 5+
-    bindsym $mod+Control+Right exec playerctl volume .1+
-    bindsym $mod+Control+Left exec playerctl volume .1-
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -.1
-    bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +.1
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-#
-# Shotman
-    bindsym $mod+o exec shotman --capture window
-    bindsym $mod+Shift+o exec shotman --capture window -C
-    bindsym $mod+p exec shotman --capture region
-    bindsym $mod+Shift+p exec shotman --capture region -C
 #
 # Base16 colorschemes
     set $base00 #2E3440
@@ -105,6 +59,8 @@
     client.unfocused        $base01 $base00 $base05 $base01 $base01
     client.urgent           $base08 $base08 $base00 $base08 $base08
 #
+# Include shortcuts file
+    include /home/padelvi/.config/sway/keys
 # Resize mode
     mode "Resize" {
         bindsym Left resize shrink width 10px
@@ -143,15 +99,6 @@
         bindsym $mod+$alt+k mode "default"
     }
     bindsym $mod+$alt+k mode "Keys"
-#
-# Keyboard
-    input "type:keyboard" {
-        xkb_layout us,de
-        xkb_options caps:escape
-    }
-#
-# Fonts and icons
-    font pango:Cousine Medium 11
 #
 # Exec
     exec kitty

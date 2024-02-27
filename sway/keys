@@ -1,0 +1,58 @@
+# vim:ft=swayconfig
+
+# Miscellaneous key bindings
+    bindsym $mod+Return exec kitty
+    bindsym $mod+Shift+q kill
+    bindsym $mod+Shift+r reload
+    bindsym $mod+n exec swaync-client -t -sw
+#
+# Moving and focusing
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces
+    bindsym $mod+1 workspace $w1
+    bindsym $mod+2 workspace $w2
+    bindsym $mod+3 workspace $w3
+    bindsym $mod+4 workspace $w4
+    bindsym $mod+0 workspace $wothers
+    bindsym $mod+Shift+1 move container to workspace $w1
+    bindsym $mod+Shift+2 move container to workspace $w2
+    bindsym $mod+Shift+3 move container to workspace $w3
+    bindsym $mod+Shift+4 move container to workspace $w4
+    bindsym $mod+Shift+0 move container to workspace $wothers
+#
+# Layout
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+    bindsym $mod+f fullscreen
+    bindsym $mod+d focus child
+    bindsym $mod+Shift+d focus parent
+    bindsym $mod+space floating toggle
+#
+# Playerctl
+    bindsym $mod+backslash exec playerctl play-pause
+    bindsym $mod+apostrophe exec playerctl previous
+    bindsym $mod+quotedbl exec playerctl next
+    bindsym $mod+Control+comma exec playerctl position 5-
+    bindsym $mod+Control+period exec playerctl position 5+
+    bindsym $mod+Control+Right exec playerctl volume .1+
+    bindsym $mod+Control+Left exec playerctl volume .1-
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -.1
+    bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +.1
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+#
+# Shotman
+    bindsym $mod+o exec shotman --capture window
+    bindsym $mod+p exec shotman --capture window -C
+    bindsym $mod+Shift+o exec shotman --capture region
+    bindsym $mod+Shift+p exec shotman --capture region -C
+#
