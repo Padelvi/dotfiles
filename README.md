@@ -1,6 +1,6 @@
 ## My system dotfiles
 
-This is my repo for my dev dotfiles. I'm currently migrating from arch linux to artix with dinit. I use swaywm.
+This is my repo for my dev dotfiles. Both for developing and as my daily driver, I use artix linux with dinit as my init system and swaywm as my WM.
 
 The dotfiles, should not be limited to arch or artix, but I'll just ensure that they work with artix.
 
