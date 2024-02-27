@@ -5,3 +5,8 @@ swaync/style.css.map
 # For now, spotify credentials in here
 spotifyd/password.txt
 spotifyd/client.json
+
+# Kitty python files that modify themselves all the time
+kitty/get_layout.py
+kitty/neighboring_window.py
+kitty/pass_keys.py
