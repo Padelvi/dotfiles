@@ -1,3 +1,5 @@
+# vim:ft=swayconfig
+
 # Set basic variables and mod keys
     set $mod Mod4
     set $alt Mod1
@@ -72,6 +74,10 @@
         bindsym $mod+Up focus up
         bindsym $mod+Right focus right
 
+        bindsym Control+Shift+r exec /home/padelvi/dotfiles/mouse/right.sh
+        bindsym Control+$alt+Up exec /home/padelvi/dotfiles/mouse/scrollup.sh
+        bindsym Control+$alt+Down exec /home/padelvi/dotfiles/mouse/scrolldown.sh
+
         bindsym $mod+$alt+k mode "Keys"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -93,6 +99,10 @@
         bindsym $alt+Shift+o exec wtype Ó
         bindsym $alt+u exec wtype ú
         bindsym $alt+Shift+u exec wtype Ú
+
+        bindsym Control+Shift+r exec /home/padelvi/dotfiles/mouse/right.sh
+        bindsym Control+$alt+Up exec /home/padelvi/dotfiles/mouse/scrollup.sh
+        bindsym Control+$alt+Down exec /home/padelvi/dotfiles/mouse/scrolldown.sh
 
         bindsym $mod+r mode "Resize"
         bindsym Escape mode "default"

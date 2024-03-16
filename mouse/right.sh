@@ -1,0 +1,1 @@
+echo click right | dotool

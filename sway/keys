@@ -56,3 +56,8 @@
     bindsym $mod+Shift+o exec shotman --capture region
     bindsym $mod+Shift+p exec shotman --capture region -C
 #
+# Mouse bindings
+    bindsym Control+Shift+r exec /home/padelvi/dotfiles/mouse/right.sh
+    bindsym Control+$alt+Up exec /home/padelvi/dotfiles/mouse/scrollup.sh
+    bindsym Control+$alt+Down exec /home/padelvi/dotfiles/mouse/scrolldown.sh
+#
