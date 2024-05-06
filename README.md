@@ -4,7 +4,7 @@ This is my repo for my dev dotfiles. Both for developing and as my daily driver,
 
 The dotfiles, should not be limited to arch or artix, but I'll just ensure that they work with artix.
 
-Also, as a dev, I code in python (and also starting with rust). My editor is neovim.
+Also, as a dev, I code in python and a bit of lua, and I plan to start learning LaTeX for my math docs. My editor is neovim.
 
 For now, I have added my configs for:
 
@@ -16,7 +16,7 @@ For now, I have added my configs for:
 - Spotifyd
 - Zsh (I use oh-my-zsh)
 - Neovim (using AstroNvim)
-- Dinit scripts for various stuff
+- Dinit scripts for some stuff
 
 ### Installation
 
