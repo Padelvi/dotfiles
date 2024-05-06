@@ -87,6 +87,7 @@
 # Special keys, char mode
     mode "Keys" {
         bindsym $alt+n exec wtype ñ
+        bindsym $alt+Shift+n exec wtype Ñ
         bindsym $alt+Shift+slash exec wtype ¿
         bindsym $alt+Shift+1 exec wtype ¡
         bindsym $alt+a exec wtype á

@@ -5,6 +5,7 @@
     bindsym $mod+Shift+q kill
     bindsym $mod+Shift+r reload
     bindsym $mod+n exec swaync-client -t -sw
+    bindsym $mod+x exec hyprpicker -naf hex
 #
 # Moving and focusing
     bindsym $mod+Left focus left

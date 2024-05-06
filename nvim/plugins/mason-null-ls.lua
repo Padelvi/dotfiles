@@ -6,7 +6,7 @@ return {
   {
     "jay-babu/mason-null-ls.nvim",
     opts = {
-      ensure_installed = { "prettier", "stylua", "ast-grep" },
+      ensure_installed = { "prettier", "stylua" },
     },
   },
   {

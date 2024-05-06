@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      ensure_installed = { "lua", "rust", "python", "arduino", "yuck" },
+      ensure_installed = { "lua", "python" },
     },
   },
   {
@@ -34,39 +34,9 @@ return {
     end,
   },
   {
-    "kmonad/kmonad-vim",
-    event = "BufRead",
-  },
-  {
-    "edluffy/hologram.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("hologram").setup {
-        auto_display = true,
-      }
-    end,
-  },
-  {
     "knubie/vim-kitty-navigator",
     event = "VeryLazy",
     config = function() os.execute "cp ~/.local/share/nvim/lazy/vim-kitty-navigator/*.py ~/.config/kitty/" end,
-  },
-  {
-    "smoka7/multicursors.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "smoka7/hydra.nvim",
-    },
-    opts = {},
-    cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
-    keys = {
-      {
-        mode = { "v", "n" },
-        "<Leader>m",
-        "<cmd>MCstart<cr>",
-        desc = "Create a selection for selected text or word under the cursor",
-      },
-    },
   },
   {
     "altermo/ultimate-autopair.nvim",
@@ -86,47 +56,6 @@ return {
           ["0"] = "1",
         },
         remove_default_inverses = true,
-      }
-    end,
-  },
-  {
-    "Zeioth/compiler.nvim",
-    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-    dependencies = { "stevearc/overseer.nvim" },
-    opts = {},
-  },
-  {
-    "stevearc/overseer.nvim",
-    commit = "400e762648b70397d0d315e5acaf0ff3597f2d8b",
-    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-    opts = {
-      task_list = {
-        direction = "bottom",
-        min_height = 25,
-        max_height = 25,
-        default_detail = 1,
-      },
-    },
-  },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function() require("refactoring").setup() end,
-  },
-  {
-    "pysan3/autosession.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("autosession").setup {
-        msg = nil,
-        restore_on_setup = false,
-        warn_on_setup = true,
-        autosave_on_quit = true,
-        force_autosave = false,
-        sessionfile_name = ".session.vim",
       }
     end,
   },

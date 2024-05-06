@@ -57,9 +57,6 @@ compinit
 # Zoxide
 eval "$(zoxide init zsh)"
 
-# Thefuck
-eval "$(thefuck --alias)"
-
 # Check if dinit is running, if it is not then start it
 DINIT_SOCKET=/run/user/1000/dinitctl
 if [[ ! -e "$DINIT_SOCKET" ]]; then
