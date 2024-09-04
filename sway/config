@@ -31,6 +31,7 @@
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="connman-gtk"] $wothers
     assign [app_id="OpenTabletDriver.UX"] $wothers
+    assign [app_id="cmst"] $wothers
 
     workspace $w1 output HDMI-A-1
     workspace $w2 output HDMI-A-1
