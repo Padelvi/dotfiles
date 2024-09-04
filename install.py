@@ -94,8 +94,12 @@ def install():
             "dinit": install_dinit,
         }
 
+        not_install = (
+            "mouse",
+        )
+
         unimportant = ("README.md", ".git", "install.py", ".gitignore", "LICENSE")
-        assert set(map(lambda p: p.parts[-1], dotfiles.iterdir())) == {*install_in_config_home, *install_special.keys(), *unimportant}
+        assert set(map(lambda p: p.parts[-1], dotfiles.iterdir())) == {*install_in_config_home, *install_special.keys(), *unimportant, *not_install}
 
         backup = input("Skip backups (y/N)? ").lower() not in ("y", "yes")
 
