@@ -20,16 +20,17 @@
 # Workspaces
     set $w1 "1: Term"
     set $w2 "2: Browser"
-    set $w3 "3: Krita"
-    set $w4 "4: Inkscape"
+    set $w3 "3: Cantor"
+    set $w4 "4: Krita"
+    set $w5 "5: Inkscape"
     set $wothers "Others"
 
     assign [app_id="kitty"] $w1
-    assign [app_id="firefoxdeveloperedition"] $w2
-    assign [class="krita"] $w3
-    assign [app_id="org.inkscape.Inkscape"] $w4
+    assign [app_id="firefox-developer-edition"] $w2
+    assign [app_id="org.kde.cantor"] $w3
+    assign [class="krita"] $w4
+    assign [app_id="org.inkscape.Inkscape"] $w5
     assign [app_id="pavucontrol"] $wothers
-    assign [app_id="connman-gtk"] $wothers
     assign [app_id="OpenTabletDriver.UX"] $wothers
     assign [app_id="cmst"] $wothers
 
@@ -37,6 +38,7 @@
     workspace $w2 output HDMI-A-1
     workspace $w3 output HDMI-A-1
     workspace $w4 output HDMI-A-1
+    workspace $w5 output HDMI-A-1
     workspace $wothers output eDP-1
 #
 # Base16 colorschemes
