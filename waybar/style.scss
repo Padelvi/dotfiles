@@ -31,7 +31,7 @@ window#waybar.empty {
 }
 
 #workspaces button {
-  padding: 0 5px;
+  border-right: 3px solid $nord6;
   background-color: $nord3;
 }
 
@@ -40,7 +40,7 @@ window#waybar.empty {
 }
 
 #workspaces button.focused {
-  background-color: $nord6;
+  background-color: $nord0;
   color: $nord0;
 }
 
@@ -81,6 +81,7 @@ label:focus {
 
 .modules-left > widget:first-child > #workspaces {
   margin-left: 0;
+  border: none;
 }
 
 .modules-right > widget:last-child > #workspaces {

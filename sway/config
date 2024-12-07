@@ -18,18 +18,20 @@
     output * bg $HOME/.local/share/wallpapers/River.png fill
 #
 # Workspaces
-    set $w1 "1: Term"
-    set $w2 "2: Browser"
-    set $w3 "3: Cantor"
-    set $w4 "4: Krita"
-    set $w5 "5: Inkscape"
+    set $w1 "Term"
+    set $w2 "Browser"
+    set $w3 "Obsidian"
+    set $w4 "Cantor"
+    set $w5 "Krita"
+    set $w6 "Inkscape"
     set $wothers "Others"
 
     assign [app_id="kitty"] $w1
     assign [app_id="firefox-developer-edition"] $w2
-    assign [app_id="org.kde.cantor"] $w3
-    assign [class="krita"] $w4
-    assign [app_id="org.inkscape.Inkscape"] $w5
+    assign [class="obsidian"] $w3
+    assign [app_id="org.kde.cantor"] $w4
+    assign [class="krita"] $w5
+    assign [app_id="org.inkscape.Inkscape"] $w6
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="OpenTabletDriver.UX"] $wothers
     assign [app_id="cmst"] $wothers
@@ -39,6 +41,7 @@
     workspace $w3 output HDMI-A-1
     workspace $w4 output HDMI-A-1
     workspace $w5 output HDMI-A-1
+    workspace $w6 output HDMI-A-1
     workspace $wothers output eDP-1
 #
 # Base16 colorschemes
@@ -64,7 +67,7 @@
     client.unfocused        $base01 $base00 $base05 $base01 $base01
     client.urgent           $base08 $base08 $base00 $base08 $base08
 #
-# Include shortcuts file
+# Include keys file
     include /home/padelvi/.config/sway/keys
 # Resize mode
     mode "Resize" {

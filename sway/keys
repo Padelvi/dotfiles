@@ -24,12 +24,14 @@
     bindsym $mod+3 workspace $w3
     bindsym $mod+4 workspace $w4
     bindsym $mod+5 workspace $w5
+    bindsym $mod+6 workspace $w6
     bindsym $mod+0 workspace $wothers
     bindsym $mod+Shift+1 move container to workspace $w1
     bindsym $mod+Shift+2 move container to workspace $w2
     bindsym $mod+Shift+3 move container to workspace $w3
     bindsym $mod+Shift+4 move container to workspace $w4
     bindsym $mod+Shift+5 move container to workspace $w5
+    bindsym $mod+Shift+6 move container to workspace $w6
     bindsym $mod+Shift+0 move container to workspace $wothers
 #
 # Layout

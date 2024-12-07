@@ -14,7 +14,7 @@ window#waybar.empty {
 }
 
 #workspaces button {
-  padding: 0 5px;
+  border-right: 3px solid #eceff4;
   background-color: #4c566a;
 }
 
@@ -23,7 +23,7 @@ window#waybar.empty {
 }
 
 #workspaces button.focused {
-  background-color: #eceff4;
+  background-color: #2e3440;
   color: #2e3440;
 }
 
@@ -64,6 +64,7 @@ label:focus {
 
 .modules-left > widget:first-child > #workspaces {
   margin-left: 0;
+  border: none;
 }
 
 .modules-right > widget:last-child > #workspaces {
