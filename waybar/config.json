@@ -7,7 +7,6 @@
   "modules-center": [],
   "modules-right": [
     "mpris",
-    "bluetooth",
     "custom/notification",
     "wireplumber",
     "network",
@@ -21,7 +20,8 @@
     "format-icons": {
       "Term": "",
       "Browser": "",
-      "Obsidian": ""
+      "Obsidian": "",
+      "default": "⏹"
     }
   },
   "sway/mode": {
@@ -37,7 +37,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "on-click": "cmst"
   },
   "wireplumber": {
     "format": "{volume}%",
