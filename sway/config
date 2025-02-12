@@ -21,20 +21,21 @@
     set $w1 "Term"
     set $w2 "Browser"
     set $w3 "Obsidian"
-    set $w4 "Cantor"
-    set $w5 "Krita"
+    set $w4 "Krita"
+    set $w5 "Cantor"
     set $w6 "Inkscape"
     set $wothers "Others"
 
     assign [app_id="kitty"] $w1
     assign [app_id="firefox-developer-edition"] $w2
     assign [class="obsidian"] $w3
-    assign [app_id="org.kde.cantor"] $w4
-    assign [class="krita"] $w5
+    assign [class="krita"] $w4
+    assign [app_id="org.kde.cantor"] $w5
     assign [app_id="org.inkscape.Inkscape"] $w6
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="OpenTabletDriver.UX"] $wothers
     assign [app_id="cmst"] $wothers
+    assign [app_id="com.transmissionbt.transmission_27_7650755"] $wothers
 
     workspace $w1 output HDMI-A-1
     workspace $w2 output HDMI-A-1
