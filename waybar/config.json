@@ -3,10 +3,11 @@
   "position": "top",
   "height": 30,
   "spacing": 0,
-  "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+  "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": [],
   "modules-right": [
     "mpris",
+    "bluetooth",
     "custom/notification",
     "wireplumber",
     "network",
@@ -21,6 +22,7 @@
       "Term": "",
       "Browser": "",
       "Obsidian": "",
+      "Krita": "",
       "default": "⏹"
     }
   },
@@ -28,8 +30,8 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%d/%m/%Y}"
+    "format": "{:%R}",
+    "tooltip-format": "{:%a %d %b %Y}"
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",
