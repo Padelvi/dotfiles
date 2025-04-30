@@ -60,7 +60,8 @@
   },
   "bluetooth": {
     "format": " Not connected",
-    "format-connected": " Connected: {device_alias}"
+    "format-connected": " Connected: {device_alias}",
+    "on-click": "cmst"
   },
   "custom/notification": {
     "tooltip": false,
