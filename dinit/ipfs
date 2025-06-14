@@ -1,0 +1,3 @@
+type = process
+command = /usr/bin/AppImageLauncher /home/padelvi/Applications/ipfs-desktop-0.42.0-linux-x86_64_ffb4ae007280ff63afe48a8c60dd3d94.AppImage
+restart = true
