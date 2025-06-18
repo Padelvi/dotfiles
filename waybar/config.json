@@ -61,7 +61,7 @@
   "bluetooth": {
     "format": " Not connected",
     "format-connected": " Connected: {device_alias}",
-    "on-click": "cmst"
+    "on-click": "blueberry"
   },
   "custom/notification": {
     "tooltip": false,

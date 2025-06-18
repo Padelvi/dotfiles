@@ -36,6 +36,7 @@
     assign [app_id="OpenTabletDriver.UX"] $wothers
     assign [app_id="cmst"] $wothers
     assign [app_id="com.transmissionbt.transmission_27_7650755"] $wothers
+    assign [app_id="blueberry.py"] $wothers
 
     workspace $w1 output HDMI-A-1
     workspace $w2 output HDMI-A-1
