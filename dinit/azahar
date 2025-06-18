@@ -1,3 +1,4 @@
 type = process
 command = /usr/bin/azahar
 restart = false
+waits-for: joycond-cemuhook
