@@ -1,3 +1,4 @@
 type = process
 command = /usr/bin/joycond-cemuhook
 restart = false
+logfile = /home/padelvi/.local/share/dinit/joycond-cemuhook.log
