@@ -35,8 +35,9 @@ def install_zsh(user: str, backup: bool):
     link(f"{src}/aliases.zsh", f"{home}/.oh-my-zsh/custom/aliases.zsh", backup)
 
 def install_nvim(user: str, backup: bool):
-    home = f"/home/{user}"
-    link(f"{home}/dotfiles/nvim", f"{home}/.config/nvim/lua/user", backup)
+    #home = f"/home/{user}"
+    #link(f"{home}/dotfiles/nvim", f"{home}/.config/nvim/lua/user", backup)
+    return
 
 def install_waybar(user: str, backup: bool):
     home = f"/home/{user}"

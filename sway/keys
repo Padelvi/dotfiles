@@ -3,9 +3,10 @@
 # Miscellaneous key bindings
     bindsym $mod+Return exec kitty
     bindsym $mod+Shift+q kill
-    bindsym $mod+Shift+r reload
+    bindsym $mod+Shift+r exec $dot/sway/sway_reload.sh
     bindsym $mod+n exec swaync-client -t -sw
     bindsym $mod+x exec hyprpicker -naf hex
+    bindsym $mod+l exec catapult
 #
 # Moving and focusing
     bindsym $mod+Left focus left
@@ -24,15 +25,15 @@
     bindsym $mod+3 workspace $w3
     bindsym $mod+4 workspace $w4
     bindsym $mod+5 workspace $w5
-    bindsym $mod+6 workspace $w6
-    bindsym $mod+0 workspace $wothers
+    bindsym $mod+9 workspace $wothers
+    bindsym $mod+0 workspace $wscreen
     bindsym $mod+Shift+1 move container to workspace $w1
     bindsym $mod+Shift+2 move container to workspace $w2
     bindsym $mod+Shift+3 move container to workspace $w3
     bindsym $mod+Shift+4 move container to workspace $w4
     bindsym $mod+Shift+5 move container to workspace $w5
-    bindsym $mod+Shift+6 move container to workspace $w6
-    bindsym $mod+Shift+0 move container to workspace $wothers
+    bindsym $mod+Shift+9 move container to workspace $wothers
+    bindsym $mod+Shift+0 move container to workspace $wscreen
 #
 # Layout
     bindsym $mod+s layout stacking
@@ -62,7 +63,7 @@
     bindsym $mod+Shift+p exec shotman --capture region -C
 #
 # Mouse bindings
-    bindsym Control+Shift+r exec /home/padelvi/dotfiles/mouse/right.sh
-    bindsym Control+$alt+Up exec /home/padelvi/dotfiles/mouse/scrollup.sh
-    bindsym Control+$alt+Down exec /home/padelvi/dotfiles/mouse/scrolldown.sh
+    bindsym Control+Shift+r exec $dot/mouse/right.sh
+    bindsym Control+$alt+Up exec $dot/mouse/scrollup.sh
+    bindsym Control+$alt+Down exec $dot/mouse/scrolldown.sh
 #

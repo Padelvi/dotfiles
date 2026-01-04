@@ -1,9 +1,7 @@
-# Git remote commands
+# Git aliases
 alias gra="git remote add origin"
 alias grm="git remote remove origin"
 alias gr="git remote show origin | grep URL"
-
-# Other git commands
 alias gcn="git config --global"
 alias gi="git init"
 alias gst="git status"
@@ -14,7 +12,7 @@ alias glo="git log"
 alias gl="git pull origin"
 alias gdf="git diff"
 
-# Python
+# Python aliases
 alias py="python3"
 alias pys="python3 -m http.server"
 alias pyv="python3 -m venv venv"
@@ -33,8 +31,8 @@ alias clw="cliphist wipe"
 # Others
 alias nv="nvim"
 alias cls="clear"
-alias t="touch"
+alias open="xdg-open"
 alias ex="exit"
 alias exp="export"
-alias rm="echo Do not use rm, use trash instead, you wanted to delete "
+alias rm="echo Do not use rm, use trash instead, you wanted to delete: "
 alias ctl="dinitctl"

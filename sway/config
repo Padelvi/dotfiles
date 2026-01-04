@@ -3,6 +3,7 @@
 # Set basic variables and mod keys
     set $mod Mod4
     set $alt Mod1
+    set $dot /home/padelvi/dotfiles
     floating_modifier $mod normal
 #
 # Keyboard
@@ -23,15 +24,15 @@
     set $w3 "Obsidian"
     set $w4 "Krita"
     set $w5 "Cantor"
-    set $w6 "Inkscape"
     set $wothers "Others"
+    set $wscreen "Screen"
 
     assign [app_id="kitty"] $w1
     assign [app_id="firefox-developer-edition"] $w2
+    assign [app_id="firefox"] $w2
     assign [class="obsidian"] $w3
     assign [class="krita"] $w4
     assign [app_id="org.kde.cantor"] $w5
-    assign [app_id="org.inkscape.Inkscape"] $w6
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="OpenTabletDriver.UX"] $wothers
     assign [app_id="cmst"] $wothers
@@ -43,8 +44,8 @@
     workspace $w3 output HDMI-A-1
     workspace $w4 output HDMI-A-1
     workspace $w5 output HDMI-A-1
-    workspace $w6 output HDMI-A-1
-    workspace $wothers output eDP-1
+    workspace $wothers output HDMI-A-1
+    workspace $wscreen output eDP-1
 #
 # Base16 colorschemes
     set $base00 #2E3440
@@ -109,9 +110,11 @@
         bindsym $alt+u exec wtype ú
         bindsym $alt+Shift+u exec wtype Ú
 
-        bindsym Control+Shift+r exec /home/padelvi/dotfiles/mouse/right.sh
-        bindsym Control+$alt+Up exec /home/padelvi/dotfiles/mouse/scrollup.sh
-        bindsym Control+$alt+Down exec /home/padelvi/dotfiles/mouse/scrolldown.sh
+        bindsym Control+Shift+r exec $dot/mouse/right.sh
+        bindsym Control+$alt+Up exec $dot/mouse/scrollup.sh
+        bindsym Control+$alt+Down exec $dot/mouse/scrolldown.sh
+
+    	bindsym $mod+l exec catapult
 
         bindsym $mod+r mode "Resize"
         bindsym Escape mode "default"
