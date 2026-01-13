@@ -92,6 +92,7 @@
     "format-full": "  {capacity}%",
     "format-warning": "  {capacity}",
     "format-critical": "  {capacity}",
-    "format-plugged": " {capacity}%"
+    "format-plugged": " {capacity}%",
+    "format-charging": " {capacity}%"
   }
 }
