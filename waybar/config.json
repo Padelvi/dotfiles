@@ -8,7 +8,7 @@
   "modules-right": [
     "mpris",
     "bluetooth",
-    "custom/notification",
+    "battery",
     "wireplumber",
     "network",
     "clock"
@@ -82,5 +82,16 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "  {capacity}%",
+    "format-full": "  {capacity}%",
+    "format-warning": "  {capacity}",
+    "format-critical": "  {capacity}",
+    "format-plugged": " {capacity}%"
   }
 }

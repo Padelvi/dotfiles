@@ -47,6 +47,7 @@ label:focus {
 #mode,
 #mpris,
 #custom-notification,
+#battery,
 #bluetooth {
   padding: 0 10px;
   margin: 0;
@@ -67,6 +68,10 @@ label:focus {
   margin-right: 0;
 }
 
+#battery {
+  background-color: #88c0d0;
+}
+
 #clock {
   background-color: #81a1c1;
 }
@@ -83,10 +88,11 @@ label:focus {
   background-color: #bf616a;
 }
 
+/*
 #custom-notification {
-  background-color: #88c0d0;
+  background-color: $nord8;
 }
-
+*/
 #wireplumber {
   background-color: #ebcb8b;
 }
