@@ -31,6 +31,7 @@
     assign [app_id="firefox-developer-edition"] $w2
     assign [app_id="firefox"] $w2
     assign [class="obsidian"] $w3
+    assign [app_id="obsidian"] $w3
     assign [class="krita"] $w4
     assign [app_id="org.kde.cantor"] $w5
     assign [app_id="pavucontrol"] $wothers
