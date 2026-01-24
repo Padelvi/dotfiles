@@ -85,11 +85,12 @@
   },
   "battery": {
     "states": {
-      "warning": 30,
+      "normal": 85,
+      "warning": 40,
       "critical": 20
     },
-    "format": "  {capacity}%",
-    "format-full": "  {capacity}%",
+    "format": "  {capacity}%",
+    "format-normal": "  {capacity}%",
     "format-warning": "  {capacity}",
     "format-critical": "  {capacity}",
     "format-plugged": " {capacity}%",
