@@ -1,7 +1,7 @@
 # Env vars
 export EDITOR=nvim
 export GIT_EDITOR=nvim
-export SUDO_EDITOR=nano
+export SUDO_EDITOR=vi
 export MOZ_ENABLE_WAYLAND=1
 export QT_QPA_PLATFORM=wayland
 export XDG_SESSION_DESKTOP=sway
