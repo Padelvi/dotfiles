@@ -43,15 +43,14 @@
     bindsym $mod+d focus child
     bindsym $mod+Shift+d focus parent
     bindsym $mod+space floating toggle
+    bindsym $mod+Shift+space focus mode_toggle
 #
 # Playerctl
     bindsym $mod+backslash exec playerctl play-pause
     bindsym $mod+apostrophe exec playerctl previous
     bindsym $mod+quotedbl exec playerctl next
-    bindsym $mod+Control+comma exec playerctl position 5-
-    bindsym $mod+Control+period exec playerctl position 5+
-    bindsym $mod+Control+Right exec playerctl volume .1+
-    bindsym $mod+Control+Left exec playerctl volume .1-
+    bindsym $mod+Control+Left exec playerctl position 5-
+    bindsym $mod+Control+Right exec playerctl position 5+
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -.1
     bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +.1
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
