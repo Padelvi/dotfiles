@@ -72,8 +72,4 @@ return {
     "fladson/vim-kitty",
     event = "VeryLazy",
   },
-  {
-    "AstroNvim/astrolsp",
-    opts = {},
-  },
 }
