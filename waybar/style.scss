@@ -14,6 +14,7 @@ $nord12: #d08770;
 $nord13: #ebcb8b;
 $nord14: #a3be8c;
 $nord15: #b48ead;
+$nord16: #a1b862;
 
 * {
   font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -89,6 +90,18 @@ label:focus {
   background-color: $nord8;
 }
 
+#battery.charging, #battery.plugged {
+    background-color: $nord14;
+}
+
+#battery.warning:not(.charging) {
+    background-color: $nord12;
+}
+
+#battery.critical:not(.charging) {
+    background-color: $nord11;
+}
+
 #clock {
   background-color: $nord9;
 }
@@ -120,7 +133,7 @@ label:focus {
 }
 
 #mpris {
-  background-color: $nord14;
+  background-color: $nord16;
 }
 
 #bluetooth {
