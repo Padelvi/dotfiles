@@ -1,7 +1,7 @@
 return {
   "AstroNvim/astrocommunity",
-  -- Theme (colorscheme)
-  { import = "astrocommunity.colorscheme.nord-nvim" },
+  -- Colorscheme
+  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   -- Indentation
   { import = "astrocommunity.indent.indent-tools-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
@@ -10,16 +10,18 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.tailwindcss" },
+  -- Markdown
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   -- Other
-  -- { import = "astrocommunity.utility.neodim" },
+  { import = "astrocommunity.utility.neodim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
-  -- { import = "astrocommunity.editing-support.mini-splitjoin" },
-  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-  -- { import = "astrocommunity.scrolling.cinnamon-nvim" },
-  -- { import = "astrocommunity.color.ccc-nvim" },
-  -- { import = "astrocommunity.motion.nvim-surround" },
-  -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  -- { import = "astrocommunity.syntax.vim-easy-align" },
-  { import = "astrocommunity.markdown-and-latex.vimtex" },
+  { import = "astrocommunity.editing-support.mini-splitjoin" },
+  { import = "astrocommunity.editing-support.nvim-regexplainer" },
+  { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
+  { import = "astrocommunity.scrolling.cinnamon-nvim" },
+  { import = "astrocommunity.motion.nvim-surround" },
 }

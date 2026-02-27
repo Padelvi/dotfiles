@@ -11,7 +11,7 @@ return {
     auto_quit = false,
     remotes = {},
   },
-  colorscheme = "nord",
+  colorscheme = "kanagawa-dragon",
   diagnostics = {
     virtual_text = true,
     underline = true,
@@ -23,11 +23,18 @@ return {
         allow_filetypes = {},
         ignore_filetypes = {},
       },
-      disabled = {},
-      timeout_ms = 1000,
+      disabled = { -- disable formatting capabilities for the listed language servers
+        -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
+        -- "lua_ls",
+      },
+      timeout_ms = 1000, -- default format timeout
+      -- filter = function(client) -- fully override the default formatting function
+      --   return true
+      -- end
     },
-    servers = {},
-    config = {},
+    servers = {
+      -- "pyright"
+    },
   },
   lazy = {
     defaults = { lazy = true },
@@ -37,5 +44,17 @@ return {
       },
     },
   },
-  polish = function() end,
+  -- This function is run last and is a good place to configuring
+  -- augroups/autocommands and custom filetypes also this just pure lua so
+  -- anything that doesn't fit in the normal config locations above can go here
+  polish = function()
+    -- vim.filetype.add {
+    --   -- extension = {
+    --   --   dockerignore = "fooscript",
+    --   -- },
+    --   filename = {
+    --     [".dockerignore"] = "gitignore",
+    --   },
+    -- }
+  end,
 }
