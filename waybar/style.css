@@ -72,15 +72,16 @@ label:focus {
   background-color: #88c0d0;
 }
 
+/*
 #battery.charging, #battery.plugged {
-  background-color: #a3be8c;
+    background-color: $nord8;
 }
-
-#battery.warning:not(.charging) {
+*/
+#battery.warning {
   background-color: #d08770;
 }
 
-#battery.critical:not(.charging) {
+#battery.critical {
   background-color: #bf616a;
 }
 
@@ -114,7 +115,7 @@ label:focus {
 }
 
 #mpris {
-  background-color: #a1b862;
+  background-color: #a3be8c;
 }
 
 #bluetooth {
