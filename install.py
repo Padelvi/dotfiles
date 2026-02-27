@@ -104,7 +104,7 @@ def install():
 
         backup = input("Skip backups (y/N)? ").lower() not in ("y", "yes")
 
-        print("\nStarting installating configs...")
+        print("\nStarting installing configs...")
 
         for config in install_in_config_home:
             print(f"Installing {config} configs...")
