@@ -34,6 +34,7 @@
     assign [app_id="obsidian"] $w3
     assign [app_id="org.kde.cantor"] $w4
     assign [app_id="code"] $w4
+    assign [class="Arduino IDE"] $w4
     assign [class="krita"] $w5
     assign [app_id="pavucontrol"] $wothers
     assign [app_id="OpenTabletDriver.UX"] $wothers
