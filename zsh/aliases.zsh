@@ -28,6 +28,10 @@ alias clp="cliphist list | fzf | cliphist decode | wl-copy"
 alias cld="cliphist list | fzf | cliphist delete"
 alias clw="cliphist wipe"
 
+# Libreoffice
+alias calc="libreoffice --calc"
+alias writer="libreoffice --writer"
+
 # Others
 alias nv="nvim"
 alias cls="clear"
