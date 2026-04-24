@@ -61,7 +61,7 @@
   "bluetooth": {
     "format": " Not connected",
     "format-connected": " Connected: {device_alias}",
-    "on-click": "blueberry"
+    "on-click": "blueman-manager"
   },
   "custom/notification": {
     "tooltip": false,
